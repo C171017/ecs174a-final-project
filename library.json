@@ -1,13 +1,130 @@
 {
-  "generatedAt": "2026-10-11T17:18:15.519224+00:00",
-  "sourceCatalogUpdatedAt": "2026-10-11T17:13:01.296747+00:00",
-  "recordingCount": 3,
-  "transcriptCount": 6,
-  "audioBytes": 153746827,
+  "generatedAt": "2026-10-11T17:45:32.557395+00:00",
+  "sourceCatalogUpdatedAt": "2026-10-11T17:45:31.893032+00:00",
+  "recordingCount": 8,
+  "transcriptCount": 13,
+  "audioBytes": 420001656,
   "entries": [
+    {
+      "id": "soundcore:2de4431f7415d592763adce863e4bec22ffb9e17a56ff7a984e43f291d15cd31",
+      "title": "2026-10-09 12:13:36",
+      "displayTitle": "Discussion · 2026-10-09",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-10-09 12:13:36",
+      "dateNote": "Recording title time",
+      "durationSeconds": 1259.41551,
+      "audio": "recordings/Supplemental/2026-10-09_12-13-36--2de4431f/audio.mp3",
+      "audioBytes": 20151109,
+      "transcript": "recordings/Supplemental/2026-10-09_12-13-36--2de4431f/transcript.raw.txt",
+      "extras": []
+    },
+    {
+      "id": "soundcore:a3a83cdfe93ef179a4afc52c252d52d80010fd9b9127c5f8d07429d3c2f2b98c",
+      "title": "2026-10-08 13:42:09",
+      "displayTitle": "Lecture · 2026-10-08",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-10-08 13:42:09",
+      "dateNote": "Recording title time",
+      "durationSeconds": 4505.730612,
+      "audio": "recordings/Supplemental/2026-10-08_13-42-09--a3a83cdf/audio.mp3",
+      "audioBytes": 72092147,
+      "transcript": "recordings/Supplemental/2026-10-08_13-42-09--a3a83cdf/transcript.raw.txt",
+      "extras": []
+    },
+    {
+      "id": "feishu:obcng34322ykrk4f7r48cz3h--cc4cd26bbac8",
+      "title": "Signal and Image Processing Analysis",
+      "displayTitle": null,
+      "provider": "feishu",
+      "transcriptProvider": "feishu",
+      "recordedAt": "2026-10-06T13:48:00-07:00",
+      "dateNote": "Date parsed from provider display",
+      "durationSeconds": 4217,
+      "audio": null,
+      "audioBytes": null,
+      "transcript": "recordings/Supplemental/Feishu/obcng34322ykrk4f7r48cz3h--cc4cd26bbac8/revisions/0530266ec34a3c4c7456c33342a522614ab035941077c661d3e2a1b5c0b34229/transcript.raw.txt",
+      "extras": [
+        {
+          "label": "Exported TXT",
+          "url": "recordings/Supplemental/Feishu/obcng34322ykrk4f7r48cz3h--cc4cd26bbac8/revisions/0530266ec34a3c4c7456c33342a522614ab035941077c661d3e2a1b5c0b34229/exports/01-transcript.txt"
+        },
+        {
+          "label": "Subtitles · SRT",
+          "url": "recordings/Supplemental/Feishu/obcng34322ykrk4f7r48cz3h--cc4cd26bbac8/revisions/0530266ec34a3c4c7456c33342a522614ab035941077c661d3e2a1b5c0b34229/exports/02-transcript.srt"
+        }
+      ]
+    },
+    {
+      "id": "soundcore:1f1f4b4d0dc3352ee2128cdd0f618e17435410fc4ac1472a36d484a0e9009d77",
+      "title": "2026-10-06 13:42:37",
+      "displayTitle": "Lecture · 2026-10-06",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-10-06 13:42:37",
+      "dateNote": "Recording title time",
+      "durationSeconds": 4574.458776,
+      "audio": "recordings/Supplemental/2026-10-06_13-42-37--1f1f4b4d/audio.mp3",
+      "audioBytes": 73191797,
+      "transcript": "recordings/Supplemental/2026-10-06_13-42-37--1f1f4b4d/transcript.raw.txt",
+      "extras": []
+    },
+    {
+      "id": "soundcore:3f1d1022efbd8fe4d7f5b2df4233979ee9b711bdb9b3785dac27fcb5be220c0d",
+      "title": "2026-10-02 12:20:05",
+      "displayTitle": "Discussion · 2026-10-02",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-10-02 12:20:05",
+      "dateNote": "Recording title time",
+      "durationSeconds": 803.761633,
+      "audio": "recordings/Supplemental/2026-10-02_12-20-05--3f1d1022/audio.mp3",
+      "audioBytes": 12860647,
+      "transcript": "recordings/Supplemental/2026-10-02_12-20-05--3f1d1022/transcript.raw.txt",
+      "extras": []
+    },
+    {
+      "id": "feishu:obcndn3ihi36fuvtk7n29q6p--c02bdb74255b",
+      "title": "Computer Vision Filter Analysis",
+      "displayTitle": null,
+      "provider": "feishu",
+      "transcriptProvider": "feishu",
+      "recordedAt": "2026-10-01T13:44:00-07:00",
+      "dateNote": "Date parsed from provider display",
+      "durationSeconds": 4893,
+      "audio": null,
+      "audioBytes": null,
+      "transcript": "recordings/Supplemental/Feishu/obcndn3ihi36fuvtk7n29q6p--c02bdb74255b/revisions/2a2cdbe0d623b0f46626ac1f1e87c9a386540852c58e826540f0756ad9b4c09e/transcript.raw.txt",
+      "extras": [
+        {
+          "label": "Exported TXT",
+          "url": "recordings/Supplemental/Feishu/obcndn3ihi36fuvtk7n29q6p--c02bdb74255b/revisions/2a2cdbe0d623b0f46626ac1f1e87c9a386540852c58e826540f0756ad9b4c09e/exports/01-transcript.txt"
+        },
+        {
+          "label": "Subtitles · SRT",
+          "url": "recordings/Supplemental/Feishu/obcndn3ihi36fuvtk7n29q6p--c02bdb74255b/revisions/2a2cdbe0d623b0f46626ac1f1e87c9a386540852c58e826540f0756ad9b4c09e/exports/02-transcript.srt"
+        }
+      ]
+    },
+    {
+      "id": "soundcore:a917516ab549154485567e424b44993559061fb21cf990486f2573aa8292f309",
+      "title": "2026-10-01 13:40:21",
+      "displayTitle": "Lecture · 2026-10-01",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-10-01 13:40:21",
+      "dateNote": "Recording title time",
+      "durationSeconds": 5497.417143,
+      "audio": "recordings/Supplemental/2026-10-01_13-40-21--a917516a/audio.mp3",
+      "audioBytes": 87959129,
+      "transcript": "recordings/Supplemental/2026-10-01_13-40-21--a917516a/transcript.raw.txt",
+      "extras": []
+    },
     {
       "id": "feishu:obcncbs28hxp26qiz1l9f162--80eefb5a8438",
       "title": "Image Filtering Discussion",
+      "displayTitle": null,
       "provider": "feishu",
       "transcriptProvider": "feishu",
       "recordedAt": "2026-09-29T14:11:00-07:00",
@@ -30,6 +147,7 @@
     {
       "id": "soundcore:d37e125d9fb8230010f516fd8d4845dd1a3b02d906920e92b15f63c19a1ee508",
       "title": "2026-09-29 14:11:01",
+      "displayTitle": null,
       "provider": "soundcore",
       "transcriptProvider": "superwhisper",
       "recordedAt": "2026-09-29 14:11:01",
@@ -43,6 +161,7 @@
     {
       "id": "feishu:obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509",
       "title": "Course Content Briefing",
+      "displayTitle": null,
       "provider": "feishu",
       "transcriptProvider": "feishu",
       "recordedAt": "2026-09-25T12:07:00-07:00",
@@ -65,6 +184,7 @@
     {
       "id": "soundcore:99dabae62c1c25defa2beb8e9387a6e966269be86b29e6c7ba290a8172d6019f",
       "title": "2026-09-25 12:06:59",
+      "displayTitle": null,
       "provider": "soundcore",
       "transcriptProvider": "superwhisper",
       "recordedAt": "2026-09-25 12:06:59",
@@ -78,6 +198,7 @@
     {
       "id": "feishu:obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e",
       "title": "Computer Vision Course Introduction",
+      "displayTitle": null,
       "provider": "feishu",
       "transcriptProvider": "feishu",
       "recordedAt": "2026-09-24T13:38:00-07:00",
@@ -100,6 +221,7 @@
     {
       "id": "soundcore:9d12e94a5e95538fe6f6d9a1b35104e365a9e967fae1bc54a574930f6089a70d",
       "title": "2026-09-24 13:37:57",
+      "displayTitle": null,
       "provider": "soundcore",
       "transcriptProvider": "superwhisper",
       "recordedAt": "2026-09-24 13:37:57",

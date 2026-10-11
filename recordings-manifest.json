@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T17:18:15.519224+00:00",
+  "generatedAt": "2026-10-11T17:45:32.557395+00:00",
   "files": [
     {
       "path": "recordings/2026-09-24_13-37-57/audio.mp3",
@@ -89,6 +89,102 @@
       "path": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/transcript.raw.txt",
       "bytes": 46269,
       "sha256": "04a8993bc4297ec32ad9202f96cb564d03a13c602be622a3ba63ad18a9a283c0",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-01_13-40-21--a917516a/audio.mp3",
+      "bytes": 87959129,
+      "sha256": "a917516ab549154485567e424b44993559061fb21cf990486f2573aa8292f309",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-01_13-40-21--a917516a/transcript.raw.txt",
+      "bytes": 82998,
+      "sha256": "d50fc1f1b85e353513fd459ac5e6b34d0c788403976a9af79e3ff999311c28fc",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-02_12-20-05--3f1d1022/audio.mp3",
+      "bytes": 12860647,
+      "sha256": "3f1d1022efbd8fe4d7f5b2df4233979ee9b711bdb9b3785dac27fcb5be220c0d",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-02_12-20-05--3f1d1022/transcript.raw.txt",
+      "bytes": 10684,
+      "sha256": "d7f70cb63b91dddcbd187fd8b3af1e055957a91e2c3cf012828bc717bc51eee2",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-06_13-42-37--1f1f4b4d/audio.mp3",
+      "bytes": 73191797,
+      "sha256": "1f1f4b4d0dc3352ee2128cdd0f618e17435410fc4ac1472a36d484a0e9009d77",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-06_13-42-37--1f1f4b4d/transcript.raw.txt",
+      "bytes": 67541,
+      "sha256": "f8203ec9b5eb11a7ae2a782f6ea84ff599cbced9c60e7f125b4000270e1fa285",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-08_13-42-09--a3a83cdf/audio.mp3",
+      "bytes": 72092147,
+      "sha256": "a3a83cdfe93ef179a4afc52c252d52d80010fd9b9127c5f8d07429d3c2f2b98c",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-08_13-42-09--a3a83cdf/transcript.raw.txt",
+      "bytes": 26184,
+      "sha256": "d4e36508cdbc1f025508f8350eff5aba4e7a9199510a4051876c92192906ed93",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-09_12-13-36--2de4431f/audio.mp3",
+      "bytes": 20151109,
+      "sha256": "2de4431f7415d592763adce863e4bec22ffb9e17a56ff7a984e43f291d15cd31",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/2026-10-09_12-13-36--2de4431f/transcript.raw.txt",
+      "bytes": 8290,
+      "sha256": "d411ffd8e65d09260b5539da77f1dd280d71704a6e353bfff1ab91283ad6f95c",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/Feishu/obcndn3ihi36fuvtk7n29q6p--c02bdb74255b/revisions/2a2cdbe0d623b0f46626ac1f1e87c9a386540852c58e826540f0756ad9b4c09e/exports/01-transcript.txt",
+      "bytes": 80757,
+      "sha256": "c2756bae16e673e4c1f7eb7f368d1b8baaf9427c9a655db50058cd2f1e5544b3",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/Feishu/obcndn3ihi36fuvtk7n29q6p--c02bdb74255b/revisions/2a2cdbe0d623b0f46626ac1f1e87c9a386540852c58e826540f0756ad9b4c09e/exports/02-transcript.srt",
+      "bytes": 135595,
+      "sha256": "a8e06cf288450100cdc845c3fbbe194d465eb5ddbf4b8b9bcea152e3fade9a1e",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/Feishu/obcndn3ihi36fuvtk7n29q6p--c02bdb74255b/revisions/2a2cdbe0d623b0f46626ac1f1e87c9a386540852c58e826540f0756ad9b4c09e/transcript.raw.txt",
+      "bytes": 80757,
+      "sha256": "c2756bae16e673e4c1f7eb7f368d1b8baaf9427c9a655db50058cd2f1e5544b3",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/Feishu/obcng34322ykrk4f7r48cz3h--cc4cd26bbac8/revisions/0530266ec34a3c4c7456c33342a522614ab035941077c661d3e2a1b5c0b34229/exports/01-transcript.txt",
+      "bytes": 68337,
+      "sha256": "a0be6eef7a1978d87a8b7098e3b4779510a8c2e547405d47bf17bc7ec04ff516",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/Feishu/obcng34322ykrk4f7r48cz3h--cc4cd26bbac8/revisions/0530266ec34a3c4c7456c33342a522614ab035941077c661d3e2a1b5c0b34229/exports/02-transcript.srt",
+      "bytes": 114420,
+      "sha256": "9b5cf068bf0b0fa6a2758c4f32bce705d353f28ad8c74262cf4d8765f7ce0608",
+      "published": true
+    },
+    {
+      "path": "recordings/Supplemental/Feishu/obcng34322ykrk4f7r48cz3h--cc4cd26bbac8/revisions/0530266ec34a3c4c7456c33342a522614ab035941077c661d3e2a1b5c0b34229/transcript.raw.txt",
+      "bytes": 68337,
+      "sha256": "a0be6eef7a1978d87a8b7098e3b4779510a8c2e547405d47bf17bc7ec04ff516",
       "published": true
     }
   ],

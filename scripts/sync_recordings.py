@@ -69,6 +69,7 @@ def main():
         audio = url(record.get('audio'))
         entries.append({
             'id': record['source_id'], 'title': record['title'],
+            'displayTitle': record.get('display_title'),
             'provider': record['capture_source'],
             'transcriptProvider': record['transcript_provider'],
             'recordedAt': metadata.get('recorded_at_derived') if is_feishu else record['title'],

@@ -37,7 +37,7 @@ function render() {
   el('result-count').textContent = `${selected.length} of ${entries.length} sources${query && !textReady ? ' · loading transcript text…' : ''}`;
   el('empty').hidden = selected.length !== 0;
   el('cards').innerHTML = selected.map(entry => {
-    const title = entry.provider === 'soundcore' ? `Recording · ${entry.title.slice(0,10)}` : entry.title;
+    const title = entry.displayTitle || (entry.provider === 'soundcore' ? `Recording · ${entry.title.slice(0,10)}` : entry.title);
     const audio = entry.audio ? `<audio controls preload="none" aria-label="Play ${escapeHTML(title)}" src="${fileURL(entry.audio)}"></audio>` : `<p class="missing-audio">No local audio file · transcript saved</p>`;
     const extraLinks = entry.extras.map(item => `<a href="${fileURL(item.url)}" download>${escapeHTML(item.label)}</a>`);
     return `<article class="card" data-id="${escapeHTML(entry.id)}"><div class="card-top"><span class="badge ${entry.provider === 'feishu' ? 'feishu' : ''}">${entry.provider === 'feishu' ? 'FEISHU' : 'SOUNDCORE'}</span><span class="duration">${duration(entry.durationSeconds)}</span></div><h3>${escapeHTML(title)}</h3><p class="meta">${escapeHTML(recordedDate(entry))} · ${entry.provider === 'feishu' ? 'Provider transcript' : 'Superwhisper transcript'}</p>${audio}<div class="downloads">${download(entry.audio, `Audio · ${entry.audioBytes ? (entry.audioBytes / 1048576).toFixed(1) + ' MB' : 'MP3'}`)}${download(entry.transcript, 'Transcript · TXT')}</div><div class="extra-links">${extraLinks.join('')}</div>${snippet(entry, query)}<details class="preview"><summary>Read transcript</summary><pre tabindex="0">${escapeHTML(transcriptCache.get(entry.id) || 'Loading transcript…')}</pre></details></article>`;
