@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+.venv/
+node_modules/
+# Retain the complete archive locally; publish only audio and transcript exports.
+.local/
+recordings/**
+!recordings/**/
+!recordings/**/audio.mp3
+!recordings/**/transcript.raw.txt
+!recordings/**/exports/01-transcript.txt
+!recordings/**/exports/02-transcript.srt
+data/*
+!data/.gitkeep

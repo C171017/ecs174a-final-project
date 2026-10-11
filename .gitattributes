@@ -1,0 +1,4 @@
+*.mp3 binary
+*.zip binary
+# Preserve all source artifacts byte-for-byte, including exported line endings.
+recordings/** -text

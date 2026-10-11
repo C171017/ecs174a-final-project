@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-10-11T17:18:15.519224+00:00",
+  "files": [
+    {
+      "path": "recordings/2026-09-24_13-37-57/audio.mp3",
+      "bytes": 78491939,
+      "sha256": "9d12e94a5e95538fe6f6d9a1b35104e365a9e967fae1bc54a574930f6089a70d",
+      "published": true
+    },
+    {
+      "path": "recordings/2026-09-24_13-37-57/transcript.raw.txt",
+      "bytes": 78630,
+      "sha256": "b0f8ae2abf768f9254885867a335da6f7c75ef0a8aaf57c6ab19926d4d0b4ca2",
+      "published": true
+    },
+    {
+      "path": "recordings/2026-09-25_12-06-59--99dabae6/audio.mp3",
+      "bytes": 27755875,
+      "sha256": "99dabae62c1c25defa2beb8e9387a6e966269be86b29e6c7ba290a8172d6019f",
+      "published": true
+    },
+    {
+      "path": "recordings/2026-09-25_12-06-59--99dabae6/transcript.raw.txt",
+      "bytes": 10365,
+      "sha256": "fdd09bfa81f7bbb580534edc8e245afb144aca8129dd6497997d95d454976aec",
+      "published": true
+    },
+    {
+      "path": "recordings/2026-09-29_14-11-01--d37e125d/audio.mp3",
+      "bytes": 47499013,
+      "sha256": "d37e125d9fb8230010f516fd8d4845dd1a3b02d906920e92b15f63c19a1ee508",
+      "published": true
+    },
+    {
+      "path": "recordings/2026-09-29_14-11-01--d37e125d/transcript.raw.txt",
+      "bytes": 44242,
+      "sha256": "c884388225a93ddbd1f66491dff99a7777e9c6dc4b1dee958ea3c2da726862a4",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e/revisions/9b7cb4aae79b8b1df4126592621ec90ef2689f8ca628e266c85ebbd96659b61b/exports/01-transcript.txt",
+      "bytes": 81648,
+      "sha256": "48b80dca208d34d14ff4f63d076f14a2a2a94cee8d8e610b033d8c4d3387ca69",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e/revisions/9b7cb4aae79b8b1df4126592621ec90ef2689f8ca628e266c85ebbd96659b61b/exports/02-transcript.srt",
+      "bytes": 134208,
+      "sha256": "cfaa16ffb8cad74e8f72a2c291a9a0d561a42526fbe1759d5d247f98197ac439",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e/revisions/9b7cb4aae79b8b1df4126592621ec90ef2689f8ca628e266c85ebbd96659b61b/transcript.raw.txt",
+      "bytes": 81648,
+      "sha256": "48b80dca208d34d14ff4f63d076f14a2a2a94cee8d8e610b033d8c4d3387ca69",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509/revisions/5388f22337fece42f9dde399fe9eb5ea9064f14c58a57b5389f36b4be673dc1b/exports/01-transcript.txt",
+      "bytes": 17914,
+      "sha256": "9e8f06e106d6e8c10818801dcb7b45174bad2bd580411509b63ea7b8250a8362",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509/revisions/5388f22337fece42f9dde399fe9eb5ea9064f14c58a57b5389f36b4be673dc1b/exports/02-transcript.srt",
+      "bytes": 26879,
+      "sha256": "1e080e0e83bc4ea3597c804b668674a931a44f1f9cddd61e73af397470cdf030",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509/revisions/5388f22337fece42f9dde399fe9eb5ea9064f14c58a57b5389f36b4be673dc1b/transcript.raw.txt",
+      "bytes": 17914,
+      "sha256": "9e8f06e106d6e8c10818801dcb7b45174bad2bd580411509b63ea7b8250a8362",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/exports/01-transcript.txt",
+      "bytes": 46269,
+      "sha256": "04a8993bc4297ec32ad9202f96cb564d03a13c602be622a3ba63ad18a9a283c0",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/exports/02-transcript.srt",
+      "bytes": 77777,
+      "sha256": "7313706e5e4b720b323e17cef0a5abf913707324927e649aba89a84578b45d3d",
+      "published": true
+    },
+    {
+      "path": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/transcript.raw.txt",
+      "bytes": 46269,
+      "sha256": "04a8993bc4297ec32ad9202f96cb564d03a13c602be622a3ba63ad18a9a283c0",
+      "published": true
+    }
+  ],
+  "note": "SHA-256 verified audio and transcript copies."
+}

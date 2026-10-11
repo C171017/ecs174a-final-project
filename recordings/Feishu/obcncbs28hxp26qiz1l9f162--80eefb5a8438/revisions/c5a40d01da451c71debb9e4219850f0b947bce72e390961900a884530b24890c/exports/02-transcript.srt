@@ -1,0 +1,2840 @@
+
+1
+00:00:00,150 --> 00:00:08,670
+Speaker 1: If I do averaging in this image, like if I do averaging here, right, the final average is gonna be a great color, right? 
+
+2
+00:00:08,870 --> 00:00:14,230
+Speaker 1: And if I shift it by 1 pixel, almost the same great color because average is kind of robust to this kind of bumpiness. 
+
+3
+00:00:15,110 --> 00:00:15,470
+Speaker 1: Clear. 
+
+4
+00:00:15,990 --> 00:00:17,910
+Speaker 1: So that's why the filter is operating like this. 
+
+5
+00:00:18,030 --> 00:00:22,390
+Speaker 1: And we know that's exactly what we wanted to achieve by denoising, that means removing the noise. 
+
+6
+00:00:23,220 --> 00:00:26,260
+Speaker 1: Because all of those colors are gonna look like similar. 
+
+7
+00:00:26,460 --> 00:00:27,060
+Speaker 1: See that here? 
+
+8
+00:00:27,740 --> 00:00:29,820
+Speaker 1: All those locations have the same gray scale color. 
+
+9
+00:00:31,580 --> 00:00:38,540
+Speaker 1: Okay, so then the simple filter that is an averaging filter can do the trick for us for denoising damage.
+
+10
+00:00:43,720 --> 00:00:46,640
+Speaker 1: What about the edges of the original edges? 
+
+11
+00:00:46,840 --> 00:00:47,360
+Speaker 1: Very good point. 
+
+12
+00:00:47,400 --> 00:00:48,640
+Speaker 1: The edges are smooth out, right? 
+
+13
+00:00:48,640 --> 00:00:49,400
+Speaker 1: You see that over there. 
+
+14
+00:00:49,440 --> 00:00:51,960
+Speaker 1: There was a very sharp edge from 90 to 0 suddenly. 
+
+15
+00:00:52,000 --> 00:00:53,040
+Speaker 1: But here that edges gone. 
+
+16
+00:00:53,080 --> 00:00:53,440
+Speaker 1: You see that? 
+
+17
+00:00:53,560 --> 00:00:56,440
+Speaker 1: No, I meant as it like the outside pressure for the boundary. 
+
+18
+00:00:57,160 --> 00:00:58,440
+Speaker 1: So the boundary is an issue here. 
+
+19
+00:00:58,440 --> 00:01:03,760
+Speaker 1: You see that they don't evaluate on the boundary because on the boundary, if I put the filter here, half of the filter is hanging out. 
+
+20
+00:01:04,450 --> 00:01:05,130
+Speaker 1: I can't do that. 
+
+21
+00:01:05,410 --> 00:01:06,530
+Speaker 1: There are some tricks for that. 
+
+22
+00:01:06,610 --> 00:01:09,610
+Speaker 1: So one version of doing that, which is very popular, is called Zero Pad. 
+
+23
+00:01:10,170 --> 00:01:13,730
+Speaker 1: That means you pad a bunch of zeros around the image, right? 
+
+24
+00:01:13,890 --> 00:01:14,490
+Speaker 1: And do that. 
+
+25
+00:01:14,610 --> 00:01:20,650
+Speaker 1: But in that case, you're gonna realize that the pixels on the boundary are closer to dark because there are zero added, right? 
+
+26
+00:01:20,730 --> 00:01:24,090
+Speaker 1: You're averaging, but the half of the population that you average on are zeros.
+
+27
+00:01:24,790 --> 00:01:26,870
+Speaker 1: But that is what we could usually do. 
+
+28
+00:01:26,950 --> 00:01:30,830
+Speaker 1: Or we can just assume that the final image is slightly smaller than the original. 
+
+29
+00:01:32,430 --> 00:01:33,830
+Speaker 1: But zero padding is very popular. 
+
+30
+00:01:33,870 --> 00:01:35,870
+Speaker 1: We're gonna use that in the program. 
+
+31
+00:01:36,350 --> 00:01:44,150
+Speaker 1: Why can't we just reduce the size of the filter to make it 2 by 2 for the badges or reduce the size to be 2 by two. 
+
+32
+00:01:44,430 --> 00:01:51,390
+Speaker 1: You could do that, but this actually has a mathematical equation and there's a lot of nice properties for this. If you do that, then you're not following that. 
+
+33
+00:01:52,170 --> 00:01:52,370
+Speaker 1: Right? 
+
+34
+00:01:52,650 --> 00:01:57,890
+Speaker 1: So having one unique builder to slide over the whole image has a lot of interesting properties. 
+
+35
+00:01:58,730 --> 00:02:03,130
+Speaker 1: And if you wanna write any other question, oh, there are a bunch of chairs. 
+
+36
+00:02:03,850 --> 00:02:11,650
+Speaker 1: There are two chairs here or so. I have a quick question. 
+
+37
+00:02:12,170 --> 00:02:18,250
+Speaker 1: When we're doing the averaging, how are we deciding we're gonna place the value on the right side in the middle, remember? 
+
+38
+00:02:19,290 --> 00:02:27,210
+Speaker 1: So every location that I do, like here, you see that the final outcome for this window is placed at the location that is corresponding to the middle of the window. 
+
+39
+00:02:27,370 --> 00:02:28,130
+Speaker 1: Okay, right. 
+
+40
+00:02:28,730 --> 00:02:30,130
+Speaker 1: But that's just the agreement. 
+
+41
+00:02:30,290 --> 00:02:32,810
+Speaker 1: You can say that I'm gonna always put it on the top left corner. 
+
+42
+00:02:32,970 --> 00:02:33,970
+Speaker 1: But you have to be consistent. 
+
+43
+00:02:34,010 --> 00:02:35,170
+Speaker 1: They just decide on that. 
+
+44
+00:02:35,490 --> 00:02:38,170
+Speaker 1: The filter operator is gonna decide on that and that's it. 
+
+45
+00:02:39,050 --> 00:02:40,410
+Speaker 1: But you have to be always consistent. 
+
+46
+00:02:41,970 --> 00:02:42,810
+Speaker 1: Any other question? 
+
+47
+00:02:45,730 --> 00:02:46,130
+Speaker 1: Okay. 
+
+48
+00:02:48,370 --> 00:02:53,330
+Speaker 1: And let me actually talk about the math here. Everybody see bottom here? You guys see here bottom?
+
+49
+00:03:00,150 --> 00:03:06,510
+Speaker 1: This is, sorry, the bottom is not visible. 
+
+50
+00:03:06,590 --> 00:03:07,110
+Speaker 1: Do you see that? 
+
+51
+00:03:07,150 --> 00:03:11,510
+Speaker 1: Now after, okay, that's an equation that basically describes this process in math. 
+
+52
+00:03:11,990 --> 00:03:13,230
+Speaker 1: Let me just walk you through that. 
+
+53
+00:03:13,830 --> 00:03:15,110
+Speaker 1: So G is my filter. 
+
+54
+00:03:15,750 --> 00:03:17,150
+Speaker 1: Okay, that's a summation. 
+
+55
+00:03:17,150 --> 00:03:20,750
+Speaker 1: And G and K is the index to the filter. What's gonna be the range of K and L? 
+
+56
+00:03:24,400 --> 00:03:25,440
+Speaker 1: What's the size of filter? 
+
+57
+00:03:27,360 --> 00:03:28,160
+Speaker 1: 3 by 3, right? 
+
+58
+00:03:28,160 --> 00:03:28,720
+Speaker 1: Yeah, exactly. 
+
+59
+00:03:28,800 --> 00:03:33,840
+Speaker 1: The size of the K and F should be basically 1 to 3, correct? 
+
+60
+00:03:34,080 --> 00:03:41,480
+Speaker 1: So K has basically, sorry, G has 9 values inside and F is my original image as input. 
+
+61
+00:03:41,960 --> 00:03:44,600
+Speaker 1: So for every location in the output, which is m and N. 
+
+62
+00:03:45,420 --> 00:03:53,380
+Speaker 1: I'm gonna pick a location in the neighborhood of that Indian put like that in that location is the location of the filter. 
+
+63
+00:03:53,500 --> 00:03:55,220
+Speaker 1: Let me just move that.
+
+64
+00:03:59,780 --> 00:04:05,500
+Speaker 1: Okay, so M&N is the middle here, the one that you want to calculate the value for. 
+
+65
+00:04:05,810 --> 00:04:07,130
+Speaker 1: Here, that's index of here. 
+
+66
+00:04:07,650 --> 00:04:10,170
+Speaker 1: Then I'm gonna do plus k and plus L. 
+
+67
+00:04:10,570 --> 00:04:15,450
+Speaker 1: Let's assume that k and L are index from negative 1 to 1 rather than 1 to 3. 
+
+68
+00:04:15,930 --> 00:04:17,210
+Speaker 1: It's negative 1,0,1. 
+
+69
+00:04:17,610 --> 00:04:17,890
+Speaker 1: Clear? 
+
+70
+00:04:18,170 --> 00:04:19,090
+Speaker 1: It's three numbers, right? 
+
+71
+00:04:19,090 --> 00:04:19,730
+Speaker 1: Negative 1,0,1. 
+
+72
+00:04:20,370 --> 00:04:25,170
+Speaker 1: So then N+ k is gonna be a value from n minus 1 to n plus 1. Really? 
+
+73
+00:04:26,030 --> 00:04:30,470
+Speaker 1: And n plus l is also a value from n minus 1 to n plus 1.
+
+74
+00:04:31,190 --> 00:04:38,990
+Speaker 1: So that's basically box is the box that they have here clear and everyone is gonna be multiplied by the corresponding value inside the G. 
+
+75
+00:04:39,790 --> 00:04:41,230
+Speaker 1: It's multiplied by gkl. 
+
+76
+00:04:41,750 --> 00:04:42,190
+Speaker 1: You see that? 
+
+77
+00:04:42,790 --> 00:04:48,430
+Speaker 1: Then I multiply them and add them all together over all possible K and L. So the summation that they have here is nine.
+
+78
+00:04:49,030 --> 00:04:59,270
+Speaker 1: Location like it's a for loop for 9 number like it's nested for loop like 1 for loop for 3 number which is negative to 1 another for loop for 3 numbers are negative to 1 indexing G. 
+
+79
+00:04:59,790 --> 00:05:04,230
+Speaker 1: Yeah, and that's gonna calculate the output for one location in the output dimension. 
+
+80
+00:05:05,110 --> 00:05:08,630
+Speaker 1: But of course, I'm gonna repeat that for all possible locations inside each.
+
+81
+00:05:10,220 --> 00:05:11,700
+Speaker 1: Does everybody understand the math here? 
+
+82
+00:05:15,500 --> 00:05:19,860
+Speaker 1: Again, F is my input and G is my filter. 
+
+83
+00:05:20,300 --> 00:05:26,260
+Speaker 1: For every value of G, I'm looking at the corresponding value in F, which is slightly shifted from the center. 
+
+84
+00:05:26,940 --> 00:05:30,100
+Speaker 1: I'm gonna add them all, multiply them element wise, add them all together. 
+
+85
+00:05:30,140 --> 00:05:36,140
+Speaker 1: That is gonna be the value that should be pasted at the corresponding location of the middle of the.
+
+86
+00:05:36,790 --> 00:05:39,230
+Speaker 1: Window and middle of window is m and N, right? 
+
+87
+00:05:39,270 --> 00:05:41,230
+Speaker 1: So H of m and N is equal to this. 
+
+88
+00:05:42,950 --> 00:05:43,590
+Speaker 1: Any question? 
+
+89
+00:05:44,870 --> 00:05:46,710
+Speaker 1: So that operation is called convolution. 
+
+90
+00:05:47,190 --> 00:05:50,790
+Speaker 1: Yeah, a bit louder, please.
+
+91
+00:05:52,950 --> 00:05:57,230
+Speaker 1: So I should have written that K and L are values that iterate from negative 1 to one. 
+
+92
+00:05:58,060 --> 00:05:59,740
+Speaker 1: The G is nine dimensional, right? 
+
+93
+00:05:59,780 --> 00:06:00,300
+Speaker 1: 3 by 3. 
+
+94
+00:06:00,740 --> 00:06:04,660
+Speaker 1: So K&L is indexing G, but it's not indexing the proper way of 1 to 3. 
+
+95
+00:06:04,780 --> 00:06:06,340
+Speaker 1: It is indexing from negative 1 to 1. 
+
+96
+00:06:06,980 --> 00:06:10,860
+Speaker 1: You can always change that and say that's 1 to 3, but then you have to subtract here by 2. 
+
+97
+00:06:11,580 --> 00:06:13,020
+Speaker 1: Like I, the so it is an image. 
+
+98
+00:06:13,060 --> 00:06:20,300
+Speaker 1: I can change it here, but it should be N+ k minus 2 and n plus l minus 2 because we want that center, right? Yeah. 
+
+99
+00:06:20,530 --> 00:06:24,410
+Speaker 1: It's a minor thing, but you got answer any other question? 
+
+100
+00:06:25,170 --> 00:06:35,610
+Speaker 1: So if K&L is from the original, what's at that at oh, M&M is the location that you wanna calculate it for M&M is this location just edge, right? 
+
+101
+00:06:35,610 --> 00:06:36,450
+Speaker 1: This is the final output. 
+
+102
+00:06:36,490 --> 00:06:38,170
+Speaker 1: So there's an index of the output. 
+
+103
+00:06:38,410 --> 00:06:41,170
+Speaker 1: Yeah, index of the output is for m and m, which is here. 
+
+104
+00:06:41,450 --> 00:06:45,970
+Speaker 1: You look at the window, which is m minus 1 after m plus 1 and m minus 1 after m plus one. 
+
+105
+00:06:46,340 --> 00:06:50,140
+Speaker 1: This window and you average them all together with the corresponding values from there. 
+
+106
+00:06:51,220 --> 00:06:59,740
+Speaker 1: Okay, m and is the index at the location of output that you wanna calculate K and L is the index of the filter so that you can do this multiplication. 
+
+107
+00:07:02,140 --> 00:07:04,420
+Speaker 1: Okay, so this operator is called convolution. 
+
+108
+00:07:05,180 --> 00:07:10,060
+Speaker 1: It has a lot of applications like anybody here from ECE, Electrical Engineering, but. 
+
+109
+00:07:10,130 --> 00:07:10,410
+Speaker 1: Ground. 
+
+110
+00:07:11,290 --> 00:07:27,250
+Speaker 1: Okay, so if you go to electrical engineering background, actually I don't, my undergrad in E and over there is actually a couple of courses that are dedicated for this kind of thing, like how to filters work, how to do the noise thing, you know, in communication channels, like any modem that you're using, there's a bunch of these stuff to do the noise thing of the signal, right? 
+
+111
+00:07:27,250 --> 00:07:29,810
+Speaker 1: Otherwise, your internet is like when any transceiver, you know. 
+
+112
+00:07:30,180 --> 00:07:33,340
+Speaker 1: All of this stuff is a lot of actually convolution and filtering as well. 
+
+113
+00:07:33,780 --> 00:07:35,260
+Speaker 1: But here we're not gonna focus on that. 
+
+114
+00:07:35,300 --> 00:07:40,740
+Speaker 1: We're gonna just go in a little depth that is important for our computer vision algorithm. 
+
+115
+00:07:41,180 --> 00:07:48,060
+Speaker 1: Yeah, and the convolution is actually probably you have heard about CNN, not the broadcast channels, convolution neural network. 
+
+116
+00:07:48,100 --> 00:07:48,740
+Speaker 1: Have you heard of that? 
+
+117
+00:07:49,900 --> 00:07:54,580
+Speaker 1: Convolution neural network are the most important, like very well known computer vision models. 
+
+118
+00:07:54,890 --> 00:07:59,990
+Speaker 1: And the con, the fee over the convolutional comes from this operation, which is a convolution. 
+
+119
+00:08:01,000 --> 00:08:06,760
+Speaker 1: Convulsion on neural networks here, but we're gonna talk about that probably in the conversation. 
+
+120
+00:08:06,760 --> 00:08:09,400
+Speaker 1: Okay, so far I'm just defining the filter. 
+
+121
+00:08:10,920 --> 00:08:12,560
+Speaker 1: Then let me go forward. 
+
+122
+00:08:13,480 --> 00:08:15,400
+Speaker 1: Let's look at a bunch of other filters now. 
+
+123
+00:08:16,480 --> 00:08:19,800
+Speaker 1: So this one we talked about, right? This kind of looking at the average. 
+
+124
+00:08:20,000 --> 00:08:21,920
+Speaker 1: Correct, averaging on table. 
+
+125
+00:08:22,120 --> 00:08:28,720
+Speaker 1: But now again, this, okay, let me just show that this is the left is the original image and the right is the opposite. 
+
+126
+00:08:28,720 --> 00:08:29,840
+Speaker 1: This is kind of blurred. 
+
+127
+00:08:31,120 --> 00:08:35,120
+Speaker 1: So that's pretty much somehow similar to when you do zoom, you can blur your background, right? 
+
+128
+00:08:35,640 --> 00:08:42,880
+Speaker 1: So the zoom application does exactly something similar to this, that it under identifies where the background is and then blurs it using this kind of filter. 
+
+129
+00:08:43,280 --> 00:08:45,400
+Speaker 1: And you can imagine the filter is very easy to do. 
+
+130
+00:08:45,800 --> 00:08:47,880
+Speaker 1: Like computationally, it is very inexpensive. 
+
+131
+00:08:48,200 --> 00:08:49,640
+Speaker 1: That's why they can do that on the fly. 
+
+132
+00:08:50,000 --> 00:08:52,080
+Speaker 1: You don't need to save into the file and do that. 
+
+133
+00:08:52,120 --> 00:08:52,920
+Speaker 1: It's just real time. 
+
+134
+00:08:52,960 --> 00:08:58,040
+Speaker 1: They can just easily do that with little processor. So you understand what's happening now. 
+
+135
+00:09:00,080 --> 00:09:02,280
+Speaker 1: So I cannot design other filter. 
+
+136
+00:09:02,360 --> 00:09:05,240
+Speaker 1: The filter that we decided on so far was an averaging filter. 
+
+137
+00:09:05,320 --> 00:09:06,760
+Speaker 1: All the values were 1 over 9. 
+
+138
+00:09:06,880 --> 00:09:09,560
+Speaker 1: Remember what happens if I change that to this filter? 
+
+139
+00:09:09,800 --> 00:09:11,320
+Speaker 1: Everything is 0 except the middle. 
+
+140
+00:09:12,000 --> 00:09:19,720
+Speaker 1: What is gonna be output? Same. What is gonna be output. 
+
+141
+00:09:20,420 --> 00:09:21,940
+Speaker 1: Does the image change by doing this? 
+
+142
+00:09:22,780 --> 00:09:23,220
+Speaker 1: No, right? 
+
+143
+00:09:23,260 --> 00:09:24,740
+Speaker 1: So that is the identity function. 
+
+144
+00:09:24,860 --> 00:09:25,260
+Speaker 1: Basically. 
+
+145
+00:09:25,580 --> 00:09:31,060
+Speaker 1: Remember like summation 0 is identity, multiplication 1 is identity, right? 
+
+146
+00:09:31,220 --> 00:09:33,780
+Speaker 1: So that is the identity for generation or convolution. 
+
+147
+00:09:34,140 --> 00:09:42,660
+Speaker 1: In convolution, a function that everything is zero except the middle is an identity, which means if you convert it with any signal, you're gonna get the same signal that. 
+
+148
+00:09:43,140 --> 00:09:43,900
+Speaker 1: It doesn't change it. 
+
+149
+00:09:45,300 --> 00:09:46,060
+Speaker 1: How about this? 
+
+150
+00:09:47,260 --> 00:09:48,340
+Speaker 1: What does this picture do? 
+
+151
+00:09:51,100 --> 00:09:52,340
+Speaker 1: Does it shift? 
+
+152
+00:09:52,700 --> 00:09:53,580
+Speaker 1: To the right or left? 
+
+153
+00:09:54,500 --> 00:09:54,980
+Speaker 1: To the right. 
+
+154
+00:09:55,940 --> 00:09:56,780
+Speaker 1: Well, I don't remember. 
+
+155
+00:09:56,900 --> 00:10:02,620
+Speaker 1: So that means at every window location is gonna take this pixel and shift it to the left, correct? Oh. 
+
+156
+00:10:03,080 --> 00:10:07,840
+Speaker 1: I mean, right, it's gonna add them all together and outcome is gonna be pasted at the middle location, right? 
+
+157
+00:10:08,240 --> 00:10:11,000
+Speaker 1: That means you're effectively shifting every pixel to the left. 
+
+158
+00:10:11,800 --> 00:10:12,480
+Speaker 1: Does that make sense? 
+
+159
+00:10:12,800 --> 00:10:14,280
+Speaker 1: The middle itself is not important. 
+
+160
+00:10:14,640 --> 00:10:16,200
+Speaker 1: What is important is the right pixel. 
+
+161
+00:10:16,480 --> 00:10:18,320
+Speaker 1: So right pixel is always shifted to the left. 
+
+162
+00:10:21,080 --> 00:10:26,080
+Speaker 1: And you see that in a boundary, I have some weird effect because there is no pixel on the right to shift to the left. 
+
+163
+00:10:27,590 --> 00:10:28,350
+Speaker 1: Everybody follows me. 
+
+164
+00:10:29,190 --> 00:10:30,310
+Speaker 1: So it's just a little thing. 
+
+165
+00:10:30,390 --> 00:10:31,230
+Speaker 1: Am I going fast? 
+
+166
+00:10:32,470 --> 00:10:33,830
+Speaker 1: Am I going slow and boring? 
+
+167
+00:10:33,990 --> 00:10:37,430
+Speaker 1: Or should I speed up the concept? 
+
+168
+00:10:37,870 --> 00:10:39,590
+Speaker 1: Okay, okay. 
+
+169
+00:10:39,590 --> 00:10:49,150
+Speaker 1: Let me know anytime that, you know, I don't want it to be boring work when it comes to the pixels on the boundaries, what does it choose for the values of? 
+
+170
+00:10:52,270 --> 00:10:56,150
+Speaker 1: For the Pixel, like the, if it's on the bottom, what does it choose for them? 
+
+171
+00:10:56,230 --> 00:10:58,830
+Speaker 1: Yeah, as I mentioned, but we usually do is we do zero padding. 
+
+172
+00:10:58,990 --> 00:11:01,390
+Speaker 1: That means we added boundary of zeros around them. 
+
+173
+00:11:01,830 --> 00:11:03,390
+Speaker 1: In that case, the zero is gonna be shifted. 
+
+174
+00:11:03,390 --> 00:11:06,110
+Speaker 1: But here, actually, it's for, it's not correct because this is white. 
+
+175
+00:11:06,510 --> 00:11:07,510
+Speaker 1: It's supposed to be black. 
+
+176
+00:11:08,030 --> 00:11:11,310
+Speaker 1: Cuz when you shift the 0 from here, should be copied here, right? 
+
+177
+00:11:11,590 --> 00:11:12,470
+Speaker 1: That should have been black. 
+
+178
+00:11:12,870 --> 00:11:13,910
+Speaker 1: This is like zero from here. 
+
+179
+00:11:13,990 --> 00:11:18,830
+Speaker 1: Basically, there's gonna be a zero boundary around this, usually called zero padding. 
+
+180
+00:11:19,390 --> 00:11:21,430
+Speaker 1: And deep neural networks, we're gonna use that a lot. 
+
+181
+00:11:22,110 --> 00:11:25,750
+Speaker 1: So zero padding is here and then you're gonna copy that zero to here. 
+
+182
+00:11:26,070 --> 00:11:31,670
+Speaker 1: So this band here should be black, but that's an error. That's a mistake of the presentation. 
+
+183
+00:11:32,260 --> 00:11:33,020
+Speaker 1: We should wait. 
+
+184
+00:11:33,860 --> 00:11:36,580
+Speaker 1: Maybe you do wait like one padding rather than zero. 
+
+185
+00:11:37,780 --> 00:11:39,580
+Speaker 1: If you're in zero padding, that should be fine. 
+
+186
+00:11:40,980 --> 00:11:43,140
+Speaker 1: Okay, how about this one? 
+
+187
+00:11:43,180 --> 00:11:44,380
+Speaker 1: What do you think this filter does? 
+
+188
+00:11:44,740 --> 00:11:51,420
+Speaker 1: The filter in this case is that metrics minus this metrics. So what is the left one do? 
+
+189
+00:11:52,480 --> 00:11:54,920
+Speaker 1: If you apply the left one alone, what does it do? 
+
+190
+00:11:59,320 --> 00:12:00,040
+Speaker 1: Louder, please. 
+
+191
+00:12:03,400 --> 00:12:03,440
+Speaker 1: Right? 
+
+192
+00:12:04,480 --> 00:12:05,840
+Speaker 1: It's just making it brighter, right? 
+
+193
+00:12:05,920 --> 00:12:07,760
+Speaker 1: Every pixel color is multiplied by two. 
+
+194
+00:12:08,480 --> 00:12:15,160
+Speaker 1: If it's like 1:00,20, eight, that become 2,25, what does the left one, right one, do? We just pass this, right? It's averaging. 
+
+195
+00:12:15,790 --> 00:12:17,270
+Speaker 1: But you do subtraction here. 
+
+196
+00:12:17,270 --> 00:12:20,030
+Speaker 1: That means you brighten it and then subtract the average. 
+
+197
+00:12:20,070 --> 00:12:21,470
+Speaker 1: What is gonna stand out in the end? 
+
+198
+00:12:24,030 --> 00:12:26,350
+Speaker 1: What do you think visually the image is gonna look like? 
+
+199
+00:12:26,590 --> 00:12:27,990
+Speaker 1: So it kind of look darker. 
+
+200
+00:12:28,150 --> 00:12:28,470
+Speaker 1: That's it. 
+
+201
+00:12:28,750 --> 00:12:29,150
+Speaker 1: Darker. 
+
+202
+00:12:29,910 --> 00:12:30,670
+Speaker 1: None said darker. 
+
+203
+00:12:30,670 --> 00:12:37,070
+Speaker 1: No, in terms of the artifacts, no, it's gonna look sharper, right? Because you subtract this most part of the image. 
+
+204
+00:12:37,690 --> 00:12:42,410
+Speaker 1: So there's an image that has both smooth and sharper stuff, like a lot of bumps and also smooth. 
+
+205
+00:12:42,810 --> 00:12:45,330
+Speaker 1: You're gonna subtract this smooth part and you're gonna see the sharp part. 
+
+206
+00:12:45,410 --> 00:12:47,330
+Speaker 1: You see, that is the sharp part. 
+
+207
+00:12:48,130 --> 00:12:51,130
+Speaker 1: So large changes are gonna stand out here. 
+
+208
+00:12:51,410 --> 00:12:52,050
+Speaker 1: Does it make sense? 
+
+209
+00:12:52,130 --> 00:12:52,290
+Speaker 1: Why? 
+
+210
+00:12:52,810 --> 00:12:57,130
+Speaker 1: Cuz all smooth and like image is a combination of the smooth and sharper stuff. 
+
+211
+00:12:57,510 --> 00:12:59,150
+Speaker 1: Both of them are multiplied by two here. 
+
+212
+00:12:59,470 --> 00:13:01,870
+Speaker 1: But here, this most part is subtracted out. 
+
+213
+00:13:02,590 --> 00:13:05,670
+Speaker 1: What remains is gonna be just the sharpest stuff. 
+
+214
+00:13:06,110 --> 00:13:07,430
+Speaker 1: So that's not image sharpening. 
+
+215
+00:13:09,110 --> 00:13:13,030
+Speaker 1: Is it clear you're magnifying the edges, right? 
+
+216
+00:13:13,070 --> 00:13:17,790
+Speaker 1: Or if there's a little noise, you're just against the noise reduction that's actually magnifying the noise. 
+
+217
+00:13:18,200 --> 00:13:25,680
+Speaker 1: If there's some noise happening, you're gonna see the noise going up because you're multiplying the image by 2 and subtracting the non noisy version. 
+
+218
+00:13:26,320 --> 00:13:28,160
+Speaker 1: So are you adding noise? 
+
+219
+00:13:29,400 --> 00:13:30,800
+Speaker 1: No, we take the original image. 
+
+220
+00:13:30,840 --> 00:13:34,440
+Speaker 1: If the original image was noisy, right, we multiply everything by 2. 
+
+221
+00:13:34,800 --> 00:13:38,040
+Speaker 1: That means image and noise both are multiplied by 2. And.
+
+222
+00:13:38,190 --> 00:13:44,870
+Speaker 2: Now we subtract the smooth version of the image, then what is gonna come out is basically the image plus some larger noise. 
+
+223
+00:13:45,350 --> 00:13:46,270
+Speaker 2: You see what is happening? 
+
+224
+00:13:47,070 --> 00:13:54,470
+Speaker 2: So using your mountain analogy, the brightening filter makes it more mountainous, like more bumpy, like bigger pixel values. 
+
+225
+00:13:54,470 --> 00:13:59,830
+Speaker 2: And then when you average it out even it makes the, those.
+
+226
+00:14:00,000 --> 00:14:04,520
+Speaker 1: Or even, but since they're more high, they're more exact. 
+
+227
+00:14:04,680 --> 00:14:11,040
+Speaker 1: Okay, it's trying to just take out these most variations of the mountain and magnify the very fast situations. 
+
+228
+00:14:12,320 --> 00:14:16,480
+Speaker 1: And what would happen if we just apply the left filter? 
+
+229
+00:14:16,800 --> 00:14:21,200
+Speaker 1: Just multiply every color by two, right? So it would get brighter. Yeah, color wise. Okay. 
+
+230
+00:14:21,910 --> 00:14:26,590
+Speaker 1: If something is like the color is half, it's gonna become white, which is gray is gonna become white. 
+
+231
+00:14:26,630 --> 00:14:27,270
+Speaker 1: Oh, okay. 
+
+232
+00:14:31,590 --> 00:14:33,270
+Speaker 1: So this is before and after the race. 
+
+233
+00:14:33,270 --> 00:14:45,830
+Speaker 1: You see that the before one is smaller, but after the sharper, you see that. What do you think this letter does? Any idea?
+
+234
+00:14:49,750 --> 00:14:56,230
+Speaker 3: You see that the right, left ones are positive, right ones are negative. 
+
+235
+00:14:56,230 --> 00:14:59,670
+Speaker 3: I feel like one column would shift it and the other would shift it. 
+
+236
+00:15:00,310 --> 00:15:03,030
+Speaker 3: Sorry, if you're talking to me, please talk louder. 
+
+237
+00:15:03,150 --> 00:15:06,630
+Speaker 3: And if you're not talking to me, please, they just keep the contrast. 
+
+238
+00:15:06,630 --> 00:15:13,630
+Speaker 3: So yeah, I feel like one column would shift it to the left and the other would take it back to the right. So.
+
+239
+00:15:14,790 --> 00:15:15,350
+Speaker 1: Not really. 
+
+240
+00:15:15,390 --> 00:15:15,670
+Speaker 1: No. 
+
+241
+00:15:19,630 --> 00:15:19,950
+Speaker 1: Sorry. 
+
+242
+00:15:22,350 --> 00:15:22,630
+Speaker 1: No. 
+
+243
+00:15:23,510 --> 00:15:25,070
+Speaker 1: Completely black is what? 
+
+244
+00:15:26,830 --> 00:15:27,510
+Speaker 1: Completely black. 
+
+245
+00:15:27,670 --> 00:15:27,870
+Speaker 1: Why? 
+
+246
+00:15:28,750 --> 00:15:31,230
+Speaker 1: If this was completely zero, it's gonna produce all black. 
+
+247
+00:15:32,830 --> 00:15:36,670
+Speaker 1: And if the area of the image is completely white, you're actually getting two locations. 
+
+248
+00:15:36,870 --> 00:15:37,590
+Speaker 1: You go to location. 
+
+249
+00:15:37,630 --> 00:15:42,790
+Speaker 1: So if the image is completely white, like this part of the image, then I agree that if you apply this, you're gonna get 0, correct? 
+
+250
+00:15:43,550 --> 00:15:49,710
+Speaker 1: If all the values inside the window are equal, you have you agree that multiplication is gonna make it 0.
+
+251
+00:15:51,350 --> 00:15:55,350
+Speaker 1: Then if the image area is flat, you're gonna get 0, but not all the time. 
+
+252
+00:15:55,790 --> 00:16:00,710
+Speaker 1: If the image area is not flat, you're not gonna need to get 0 correct. So it would become really dark then. 
+
+253
+00:16:01,590 --> 00:16:05,670
+Speaker 1: Yeah, the flat areas are gonna become dark, but some areas are gonna become non dark. 
+
+254
+00:16:05,790 --> 00:16:06,550
+Speaker 1: What are those areas? 
+
+255
+00:16:06,710 --> 00:16:07,750
+Speaker 1: Like what is being detected? 
+
+256
+00:16:07,790 --> 00:16:08,670
+Speaker 1: What is being magnified?
+
+257
+00:16:08,750 --> 00:16:10,590
+Speaker 1: The edges, exactly, right? 
+
+258
+00:16:11,190 --> 00:16:16,670
+Speaker 1: Because suppose that I put this window here, maybe here, right? 
+
+259
+00:16:16,950 --> 00:16:22,390
+Speaker 1: So the left part is gonna multiply by positive number and right part is gonna multiply by negative number. 
+
+260
+00:16:22,850 --> 00:16:25,330
+Speaker 1: So when you add them, what's gonna be the total value? 
+
+261
+00:16:25,330 --> 00:16:29,170
+Speaker 1: And just remember them, because these are white, right? 
+
+262
+00:16:29,170 --> 00:16:32,410
+Speaker 1: These are already very large and these are very small, close to zero. 
+
+263
+00:16:32,570 --> 00:16:33,890
+Speaker 1: So this is 1, this is 0. 
+
+264
+00:16:34,050 --> 00:16:42,850
+Speaker 1: Okay, you multiply the positive ones, the one bigger numbers with positive value and multiply the negative, the small numbers with negative value, then.
+
+265
+00:16:42,850 --> 00:16:44,330
+Speaker 1: In the total summation is gonna be positive. 
+
+266
+00:16:44,410 --> 00:16:44,810
+Speaker 1: Do you agree? 
+
+267
+00:16:46,330 --> 00:16:47,730
+Speaker 1: Then you're gonna get a positive number here. 
+
+268
+00:16:47,890 --> 00:16:54,010
+Speaker 1: But what if I paste it somewhere like this, which is completely white, like here, then you're gonna get zero.
+
+269
+00:16:55,770 --> 00:16:59,650
+Speaker 1: Everybody agrees if all the numbers are equal, then I'm gonna get zero, right? 
+
+270
+00:16:59,930 --> 00:17:03,930
+Speaker 1: So if you multiply a bunch of things and add them all together, eventually we can factor out. 
+
+271
+00:17:05,050 --> 00:17:06,690
+Speaker 1: So for here, I'm gonna get zero.
+
+272
+00:17:07,010 --> 00:17:10,490
+Speaker 1: For here, I'm gonna get a large number, right? 
+
+273
+00:17:10,850 --> 00:17:14,570
+Speaker 1: But if the age is very horizontal, I'm not gonna get a large number. 
+
+274
+00:17:14,690 --> 00:17:19,970
+Speaker 1: Like in this case, if I put it here, I'm not gonna get a large number because the left and right are almost equal colors. 
+
+275
+00:17:20,970 --> 00:17:25,490
+Speaker 1: They're gonna cancel out. Then what type of ages I'm estimating here? 
+
+276
+00:17:27,530 --> 00:17:28,650
+Speaker 1: The vertical edges, right? 
+
+277
+00:17:29,170 --> 00:17:31,530
+Speaker 1: Edges that kind of have the same shape of the filter. 
+
+278
+00:17:32,450 --> 00:17:35,250
+Speaker 1: You see that here the vertical edges are standing up.
+
+279
+00:17:36,530 --> 00:17:42,330
+Speaker 1: I also do a cheating here because, okay, here I'm gonna get a positive number. 
+
+280
+00:17:42,450 --> 00:17:45,170
+Speaker 1: What if I paste the filter here? Am I gonna get a positive number? 
+
+281
+00:17:48,120 --> 00:17:50,360
+Speaker 1: The left is small, right is large. 
+
+282
+00:17:51,040 --> 00:17:55,480
+Speaker 1: There's gonna be small number, multiply by positive, large number multiply by negative. 
+
+283
+00:17:55,760 --> 00:17:58,320
+Speaker 1: So if I subtract and add, what's gonna be the outcome? 
+
+284
+00:17:59,320 --> 00:17:59,920
+Speaker 1: Negative, right? 
+
+285
+00:18:00,360 --> 00:18:00,880
+Speaker 1: You agree? 
+
+286
+00:18:01,240 --> 00:18:03,120
+Speaker 1: So here I'm gonna get a very negative number. 
+
+287
+00:18:03,920 --> 00:18:06,440
+Speaker 1: Then this edge and this edge do not have the same behavior. 
+
+288
+00:18:06,840 --> 00:18:10,000
+Speaker 1: This edge is producing positive number. This edge is producing negative number. 
+
+289
+00:18:10,860 --> 00:18:13,580
+Speaker 1: But they show over there is the absolute value of the outcome. 
+
+290
+00:18:14,020 --> 00:18:18,140
+Speaker 1: That's why you see all of them are bright because negatives, I don't know how to visualize. 
+
+291
+00:18:19,420 --> 00:18:21,500
+Speaker 1: Remember the image is the value between 0,1, right? 
+
+292
+00:18:22,020 --> 00:18:24,460
+Speaker 1: If the value is negative half, I don't know how to visualize. 
+
+293
+00:18:24,620 --> 00:18:26,340
+Speaker 1: That's why visualizing absolute values. 
+
+294
+00:18:26,860 --> 00:18:29,060
+Speaker 1: So that's why you see both these edges are highlighted. 
+
+295
+00:18:31,470 --> 00:18:32,150
+Speaker 1: Is it clear? 
+
+296
+00:18:34,510 --> 00:18:39,510
+Speaker 1: So then this filter can be used for an edge detection, which is detecting vertical edges.
+
+297
+00:18:40,030 --> 00:18:41,390
+Speaker 1: How can I make it horizontal? 
+
+298
+00:18:45,790 --> 00:18:46,830
+Speaker 1: Just rotate it, right? 
+
+299
+00:18:47,310 --> 00:18:48,910
+Speaker 1: So this gonna produce horizontal edges. 
+
+300
+00:18:49,270 --> 00:18:51,910
+Speaker 1: You can see here that horizontal edges are picking up features. 
+
+301
+00:18:52,210 --> 00:18:52,570
+Speaker 1: See that? 
+
+302
+00:18:53,970 --> 00:18:56,490
+Speaker 1: I can probably kind of imagine where we're going from here, right? 
+
+303
+00:18:56,650 --> 00:18:59,990
+Speaker 1: So there's a lot of the study that shows human visual cortex. 
+
+304
+00:19:00,150 --> 00:19:01,630
+Speaker 1: It's super sensitive to edges. 
+
+305
+00:19:02,670 --> 00:19:04,350
+Speaker 1: Edges are the main signal that we receive. 
+
+306
+00:19:04,390 --> 00:19:05,830
+Speaker 1: We're gonna talk about that more later on. 
+
+307
+00:19:06,030 --> 00:19:08,590
+Speaker 1: So the edges are the main signal that our brain is understanding. 
+
+308
+00:19:08,710 --> 00:19:16,630
+Speaker 1: And in order to build vision, computer vision algorithms that kind of understand the same concept, we have to be able to go from images to edges. 
+
+309
+00:19:17,470 --> 00:19:20,270
+Speaker 1: Edge detection plays a big role in understanding the images.
+
+310
+00:19:22,540 --> 00:19:26,060
+Speaker 1: 이렇게. 
+
+311
+00:19:31,510 --> 00:19:36,790
+Speaker 1: So one can say, if you wanted to calculate edges, why did you use this one? 
+
+312
+00:19:36,870 --> 00:19:38,230
+Speaker 1: Why didn't you just use a filter? 
+
+313
+00:19:38,270 --> 00:19:39,950
+Speaker 1: Like this can be seen as a filter, right? 
+
+314
+00:19:39,950 --> 00:19:41,550
+Speaker 1: The filter doesn't need to be 3 by 3. 
+
+315
+00:19:41,630 --> 00:19:42,110
+Speaker 1: Do you agree? 
+
+316
+00:19:42,670 --> 00:19:43,950
+Speaker 1: It can be 3 by 1,2. 
+
+317
+00:19:45,790 --> 00:19:51,470
+Speaker 1: Everybody follows what's happening here instead of convolving it 3 by 3 filter and convolving it 3 by 1 filter. 
+
+318
+00:19:52,780 --> 00:19:53,860
+Speaker 1: That is possible, right? 
+
+319
+00:19:54,180 --> 00:19:55,780
+Speaker 1: So what's the difference between these two? 
+
+320
+00:19:58,620 --> 00:19:59,500
+Speaker 1: Can somebody guess? 
+
+321
+00:20:01,100 --> 00:20:01,340
+Speaker 1: Sorry. 
+
+322
+00:20:01,700 --> 00:20:01,740
+Speaker 1: No. 
+
+323
+00:20:01,820 --> 00:20:03,660
+Speaker 1: So these two filters are exactly identical. 
+
+324
+00:20:03,700 --> 00:20:04,180
+Speaker 1: Do you agree? 
+
+325
+00:20:05,060 --> 00:20:07,060
+Speaker 1: Cuz these zeros here do not matter. 
+
+326
+00:20:08,100 --> 00:20:10,940
+Speaker 1: A bunch of zeros multiplied by any number is gonna be zero. 
+
+327
+00:20:11,460 --> 00:20:14,900
+Speaker 1: So the summation for the total thing here, the summation for here are gonna be exactly. 
+
+328
+00:20:18,080 --> 00:20:18,320
+Speaker 1: Right. 
+
+329
+00:20:18,400 --> 00:20:21,880
+Speaker 1: So if you have zeros around your filter, you can always change it. 
+
+330
+00:20:21,920 --> 00:20:22,840
+Speaker 1: It doesn't really change your. 
+
+331
+00:20:25,160 --> 00:20:28,960
+Speaker 1: It is similar to what we had here, right? 
+
+332
+00:20:29,160 --> 00:20:30,920
+Speaker 1: So that filter is identity. 
+
+333
+00:20:31,120 --> 00:20:32,240
+Speaker 1: It doesn't change anything. 
+
+334
+00:20:32,560 --> 00:20:35,680
+Speaker 1: No matter how many zeros you had around, that's always identity, right? 
+
+335
+00:20:35,760 --> 00:20:39,880
+Speaker 1: As long as it's symmetric and the one is in the middle, it doesn't matter how many zeros you have.
+
+336
+00:20:46,060 --> 00:20:48,340
+Speaker 1: So any question before everyone? 
+
+337
+00:20:50,460 --> 00:20:51,980
+Speaker 1: I'm hoping that everyone is following. 
+
+338
+00:20:53,700 --> 00:20:59,500
+Speaker 1: I see the feedback only from probably 10 to 12 people, but not really a lot of people, not even shaking hands. 
+
+339
+00:20:59,500 --> 00:20:59,860
+Speaker 1: I'm not sure. 
+
+340
+00:20:59,860 --> 00:21:00,780
+Speaker 1: Hopefully you're following.
+
+341
+00:21:01,660 --> 00:21:12,220
+Speaker 1: Okay, so it appears that from matt point of view, I don't wanna go into math, but from matt point of view, there are filters that are really good for this kind of filtering. 
+
+342
+00:21:13,110 --> 00:21:22,470
+Speaker 1: That means instead of using the filter that we design, which was just all equal values, like a flat filter, the filter that I designed here was a flat filter, right? 
+
+343
+00:21:23,590 --> 00:21:24,630
+Speaker 1: This is a flat filter. 
+
+344
+00:21:24,710 --> 00:21:26,470
+Speaker 1: All values are 1, correct? 
+
+345
+00:21:26,630 --> 00:21:27,350
+Speaker 1: There is no change.
+
+346
+00:21:27,910 --> 00:21:35,510
+Speaker 1: But if we can make that to seem looks like something like a bell shape, like in middle is gonna be high, but your surrounding is gonna be slightly lower like a bell. 
+
+347
+00:21:35,980 --> 00:21:40,820
+Speaker 1: In that case, you're gonna get much better visually, like the Denoise version is gonna look much better.
+
+348
+00:21:41,380 --> 00:21:46,500
+Speaker 1: So one of those functions that mathematically is very well behaved and they really love it is called Gaussian function. 
+
+349
+00:21:46,540 --> 00:21:48,060
+Speaker 1: Anybody knows about Gaussian function? 
+
+350
+00:21:48,820 --> 00:21:49,940
+Speaker 1: So that's on the left, right? 
+
+351
+00:21:50,500 --> 00:21:51,580
+Speaker 1: Who knows about Gaussian? 
+
+352
+00:21:52,940 --> 00:21:53,580
+Speaker 1: Okay, awesome.
+
+353
+00:21:53,820 --> 00:21:56,500
+Speaker 1: Probably I've studied in high school maybe. Or I mean, right. 
+
+354
+00:21:57,410 --> 00:21:58,490
+Speaker 1: Or calculus 1. 
+
+355
+00:22:00,130 --> 00:22:01,370
+Speaker 1: So Gaussian looks like this. 
+
+356
+00:22:01,450 --> 00:22:02,730
+Speaker 1: Forget about the equation on the right. 
+
+357
+00:22:03,050 --> 00:22:11,370
+Speaker 1: The Gaussian is this one that in the middle, it has a maximum value as you go far from the middle, it's basically into the power of negative X score, right? 
+
+358
+00:22:11,730 --> 00:22:13,810
+Speaker 1: There's a person under step of variance and so on.
+
+359
+00:22:13,930 --> 00:22:17,730
+Speaker 1: Variance is controlling how flat, how fat or skinny they. 
+
+360
+00:22:18,540 --> 00:22:19,100
+Speaker 1: Care of this. 
+
+361
+00:22:20,020 --> 00:22:24,060
+Speaker 1: And, but you can easily extrapolate that or generalize that to two dimensions. 
+
+362
+00:22:24,380 --> 00:22:25,500
+Speaker 1: And that's actually like this. 
+
+363
+00:22:25,580 --> 00:22:26,660
+Speaker 1: Don't forget about this team.
+
+364
+00:22:26,860 --> 00:22:33,740
+Speaker 1: Is it to the power of instead of being it to the power of negative x square, that is it to the power of negative x square plus y square. 
+
+365
+00:22:34,420 --> 00:22:38,700
+Speaker 1: So x square plus y square says how far you are from the center. You agree? 
+
+366
+00:22:39,120 --> 00:22:39,960
+Speaker 1: It's distance, right? 
+
+367
+00:22:40,800 --> 00:22:41,720
+Speaker 1: X is square plus y. 
+
+368
+00:22:41,920 --> 00:22:43,600
+Speaker 1: X is one direction, y is another direction.
+
+369
+00:22:43,800 --> 00:22:48,080
+Speaker 1: So that basically this is how far you're from the center if you're exactly in the center, both X and y are zero. 
+
+370
+00:22:49,000 --> 00:22:50,920
+Speaker 1: That means it's into the power of negative zero. 
+
+371
+00:22:51,600 --> 00:22:52,120
+Speaker 1: That's max. 
+
+372
+00:22:52,800 --> 00:22:56,600
+Speaker 1: But as you go far away into the power of negative, a large number is what? 
+
+373
+00:22:58,200 --> 00:23:02,640
+Speaker 1: Into the power of negative, a large number? Zero. It's zero, right? So it's decay to zero.
+
+374
+00:23:03,020 --> 00:23:04,740
+Speaker 1: So that's the best shape that we're gonna get. 
+
+375
+00:23:05,900 --> 00:23:09,660
+Speaker 1: If when I visualize that filter from the top, it's gonna look like this. 
+
+376
+00:23:10,660 --> 00:23:14,780
+Speaker 1: Middle is very bright as you go to the surrounding, that's gonna become darker and darker. 
+
+377
+00:23:15,300 --> 00:23:20,660
+Speaker 1: The function can go to infinity, but of course we're gonna trim it at something like in this case it is maybe 10,11 by 11. 
+
+378
+00:23:21,580 --> 00:23:25,580
+Speaker 1: You see that there's an 11 by 11 matrix here. The middle is the white one.
+
+379
+00:23:26,000 --> 00:23:27,560
+Speaker 1: The very top bright one. 
+
+380
+00:23:27,600 --> 00:23:29,880
+Speaker 1: And as you go further, you're gonna get decayed. 
+
+381
+00:23:30,720 --> 00:23:38,080
+Speaker 1: Then the question is, how can, how, what is happening if I, instead of convolving this image with the flat filter, I can convert with this one. 
+
+382
+00:23:38,160 --> 00:23:39,360
+Speaker 1: The flat filter looks like this. 
+
+383
+00:23:39,600 --> 00:23:42,760
+Speaker 1: Remember, everything is zero except the middle, right?
+
+384
+00:23:42,760 --> 00:23:45,960
+Speaker 1: In the middle, you have a box. It's also called box filter. 
+
+385
+00:23:47,060 --> 00:23:47,740
+Speaker 1: Everything is zero. 
+
+386
+00:23:47,820 --> 00:23:50,060
+Speaker 1: In the middle, you have a box that are all equal numbers. 
+
+387
+00:23:50,100 --> 00:23:54,660
+Speaker 1: Like in the filter that we design earlier, the box was all 1 over 9, right?
+
+388
+00:23:54,820 --> 00:23:56,820
+Speaker 1: And you might say we didn't have zeros around it. 
+
+389
+00:23:56,860 --> 00:23:58,140
+Speaker 1: It was just all 1 over 9. 
+
+390
+00:23:58,180 --> 00:23:59,700
+Speaker 1: But I'm arguing that it doesn't matter, right? 
+
+391
+00:23:59,740 --> 00:24:01,260
+Speaker 1: You can always add a bunch of zeros around. 
+
+392
+00:24:01,980 --> 00:24:11,620
+Speaker 1: Like if I go back here, we did not have any zero here, but it doesn't matter if you can add multiple zeros around it. Like there's zero pad, this image.
+
+393
+00:24:12,000 --> 00:24:15,160
+Speaker 1: If you do zero padding, like pads surrounding it, it doesn't really matter, right? 
+
+394
+00:24:15,160 --> 00:24:16,120
+Speaker 1: The outcome is the same. 
+
+395
+00:24:16,960 --> 00:24:19,160
+Speaker 1: So that filter is gonna look like this. 
+
+396
+00:24:19,240 --> 00:24:23,320
+Speaker 1: If you visualize, okay, this one. 
+
+397
+00:24:23,960 --> 00:24:26,760
+Speaker 1: But if you want to do Gaussian, it's gonna look like circular.
+
+398
+00:24:26,920 --> 00:24:29,990
+Speaker 1: You see that it's a circle in the middle, but the rest is actually. 
+
+399
+00:24:30,000 --> 00:24:30,560
+Speaker 1: Getting to do. 
+
+400
+00:24:31,040 --> 00:24:41,080
+Speaker 1: So if you do convolution of maybe this image, which has a little bit of noise with this one and this one, you're gonna see that the outcome for this one is actually more smoother. 
+
+401
+00:24:42,320 --> 00:24:44,840
+Speaker 1: So kind of the answer is kind of obvious, right? 
+
+402
+00:24:44,920 --> 00:24:48,280
+Speaker 1: Because this one has a little corners here, so it is sensitive to rotation. 
+
+403
+00:24:48,640 --> 00:24:50,800
+Speaker 1: But this one is not sensitive to rotation. We agree.
+
+404
+00:24:51,510 --> 00:24:55,070
+Speaker 1: If you rotate the image, if you rotate the filter, you're gonna get the same filter back. 
+
+405
+00:24:55,390 --> 00:25:04,830
+Speaker 1: Okay, so that's why this kind of filter is nicer in the output when you do denoising convolution, both of them are basically smoothing the image. 
+
+406
+00:25:05,710 --> 00:25:11,950
+Speaker 1: And again, here, the lady on the left, if you do apply this convolution, you're gonna get the blurred version of that image. 
+
+407
+00:25:12,450 --> 00:25:25,210
+Speaker 1: And convolution operate that we talked about in terms of math, they usually visualize it like it is a star, like it's not multiplication, it is convolution convolu, like multiplication is multiplying two different numbers. 
+
+408
+00:25:25,650 --> 00:25:28,250
+Speaker 1: Convolution is convolving two different signals.
+
+409
+00:25:28,770 --> 00:25:33,810
+Speaker 1: The signals can be maybe 1D arrays, 2D arrays, or whatever, right? In this case, it's actually 2D arrays. 
+
+410
+00:25:34,300 --> 00:25:46,220
+Speaker 1: The two functions that you're not learning, you're conversion. Okay. 
+
+411
+00:25:46,500 --> 00:25:48,700
+Speaker 1: So I can visualize this. 
+
+412
+00:25:49,060 --> 00:25:52,940
+Speaker 1: These are filters, like one of them and looks like this is visualization again. 
+
+413
+00:25:52,980 --> 00:25:56,140
+Speaker 1: And if you wanna look at the 5 by 5 filter, the numbers are gonna look like this.
+
+414
+00:25:56,500 --> 00:25:59,300
+Speaker 1: So Gaussian by definition is a function that sums to one. 
+
+415
+00:25:59,740 --> 00:26:01,740
+Speaker 1: So people use that a lot in probability distributions. 
+
+416
+00:26:02,260 --> 00:26:08,420
+Speaker 1: So Gaussian, you can prove that if you write the Gaussian and do integration, like calculate the area under the curve, you're gonna get equal to one. 
+
+417
+00:26:09,010 --> 00:26:11,210
+Speaker 1: So the numbers that you're gonna get are gonna look like this. 
+
+418
+00:26:11,290 --> 00:26:14,090
+Speaker 1: You see that the middle is the max, like in this case, point one, six.
+
+419
+00:26:14,210 --> 00:26:16,170
+Speaker 1: And as you go further, you're gonna get smaller numbers. 
+
+420
+00:26:18,730 --> 00:26:22,530
+Speaker 1: So if I do convolution with this filter, which is Gaussian, I'm gonna get this. 
+
+421
+00:26:23,330 --> 00:26:27,210
+Speaker 1: And if I do convolution with this one, I'm gonna get that. What do you see the difference between them? 
+
+422
+00:26:30,000 --> 00:26:31,960
+Speaker 1: You see the box 1 has a little bit of artifacts. 
+
+423
+00:26:32,040 --> 00:26:38,080
+Speaker 1: You see that box 1 is this one is the circular one. 
+
+424
+00:26:38,120 --> 00:26:42,880
+Speaker 1: You see the box one has some artifacts are gonna create just because of the corners of the tool.
+
+425
+00:26:45,200 --> 00:26:51,480
+Speaker 1: And of course, for the Gaussian filter, we can always change the variance or standard deviation and make it fat or make it skinny. 
+
+426
+00:26:51,910 --> 00:26:53,110
+Speaker 1: This one is skinny version. 
+
+427
+00:26:53,230 --> 00:26:54,230
+Speaker 1: This one is a fat version. 
+
+428
+00:26:54,830 --> 00:26:59,350
+Speaker 1: If I apply a very skinny version on this image, I'm gonna get almost the same image back. 
+
+429
+00:26:59,830 --> 00:27:04,630
+Speaker 1: But if I apply slightly fat version, like flat version, I'm gonna get more blurry, right?
+
+430
+00:27:04,670 --> 00:27:10,630
+Speaker 1: Because as you increase the size of the filter and make it more fat, it's gonna introduce more bluriness, right? 
+
+431
+00:27:11,070 --> 00:27:15,270
+Speaker 1: And if the image is very fat, you're gonna get almost very blurry image. 
+
+432
+00:27:17,520 --> 00:27:21,080
+Speaker 1: Computationally, is that as cheap as using box filters? 
+
+433
+00:27:21,080 --> 00:27:22,120
+Speaker 1: A little bit expensive. 
+
+434
+00:27:23,800 --> 00:27:27,720
+Speaker 1: Oh, as soon as you define the filter, then convolution has the same cost, right?
+
+435
+00:27:28,680 --> 00:27:29,240
+Speaker 1: I mean, right. 
+
+436
+00:27:30,080 --> 00:27:31,440
+Speaker 1: Well, we're gonna talk about that. 
+
+437
+00:27:31,480 --> 00:27:35,440
+Speaker 1: If it's completely flat filter, like a box filter, there is a trick that you can make it faster. 
+
+438
+00:27:36,240 --> 00:27:40,720
+Speaker 1: But if it's not completely flat, then it doesn't really matter what the shape of the filter is. 
+
+439
+00:27:40,920 --> 00:27:44,040
+Speaker 1: You can always pay the same cost when you have to calculate this filter. 
+
+440
+00:27:44,120 --> 00:27:46,800
+Speaker 1: You have to do some computation of the Gaussian, but it doesn't really matter. 
+
+441
+00:27:46,840 --> 00:27:51,720
+Speaker 1: It's just nine numbers and you do it only once and see. So.
+
+442
+00:27:58,100 --> 00:27:59,980
+Speaker 1: Yeah, this one actually might be interesting. 
+
+443
+00:28:00,060 --> 00:28:04,860
+Speaker 1: So yeah, I'm not sure how to enable you guys to see here. 
+
+444
+00:28:05,220 --> 00:28:06,420
+Speaker 1: I guess you don't see the bottom. 
+
+445
+00:28:06,900 --> 00:28:08,380
+Speaker 1: I mean, you guys don't see the bottom. 
+
+446
+00:28:10,860 --> 00:28:15,220
+Speaker 1: I don't know because all my slides, I don't have this. Is this the problem?
+
+447
+00:28:22,500 --> 00:28:23,260
+Speaker 1: Yeah, sorry. 
+
+448
+00:28:24,220 --> 00:28:26,020
+Speaker 1: Probably you can look at it online. 
+
+449
+00:28:26,100 --> 00:28:28,220
+Speaker 1: They're all posted online and in the local. 
+
+450
+00:28:28,260 --> 00:28:33,140
+Speaker 1: So yeah, I difficult to modify all of them anyways. 
+
+451
+00:28:34,780 --> 00:28:40,700
+Speaker 1: So there's a property in calculation, the calculator for multiplication that. 
+
+452
+00:28:41,030 --> 00:28:44,910
+Speaker 1: If times G times H, you can put the parentheses anywhere that you want, right? 
+
+453
+00:28:44,950 --> 00:28:46,230
+Speaker 1: It's called association rule. 
+
+454
+00:28:46,230 --> 00:28:46,790
+Speaker 1: Am I right? 
+
+455
+00:28:47,630 --> 00:28:48,910
+Speaker 1: Association is correct. 
+
+456
+00:28:50,670 --> 00:28:53,710
+Speaker 1: So is association rule then you can put my. 
+
+457
+00:28:53,830 --> 00:28:55,910
+Speaker 1: Or you don't know for calculus, right? 
+
+458
+00:28:56,110 --> 00:28:58,510
+Speaker 1: Yeah, so the same thing applies for convolution. 
+
+459
+00:28:58,510 --> 00:29:04,470
+Speaker 1: I can prove that you can either convert G and H and then convert the outcome with F. 
+
+460
+00:29:04,970 --> 00:29:08,090
+Speaker 1: Or you can convert F and G and then convert the other combination.
+
+461
+00:29:08,770 --> 00:29:10,170
+Speaker 1: It, I don't wanna go to the proof. 
+
+462
+00:29:10,210 --> 00:29:12,210
+Speaker 1: It's actually very simple, but we don't need that for the class. 
+
+463
+00:29:12,250 --> 00:29:17,410
+Speaker 1: I'm gonna just tell you that this is one of the properties or another one is F times g. 
+
+464
+00:29:18,130 --> 00:29:24,610
+Speaker 1: So F convert by G is equivalent to G convert by F. It's symmetric. We can solve it.
+
+465
+00:29:25,190 --> 00:29:27,750
+Speaker 1: Okay, so these properties are coming handy sometimes. 
+
+466
+00:29:27,790 --> 00:29:42,190
+Speaker 1: So for instance, if I have a large image and if I want to convert with two different filters, then probably it's easier to first convert the filters and then convert the outcome with it rather than convert with the image with the first filter and then convert with the outcome with the second filter. 
+
+467
+00:29:42,950 --> 00:29:48,990
+Speaker 1: Wait, are these properties true for any filters? It doesn't matter. We can prove that.
+
+468
+00:29:49,750 --> 00:29:50,550
+Speaker 1: Automatically. 
+
+469
+00:29:52,830 --> 00:30:00,750
+Speaker 1: So like for another property that's actually interesting, like ocean has another very nice property. 
+
+470
+00:30:00,870 --> 00:30:09,270
+Speaker 1: Like if you have two different ocean filters, if you convert those two filters together, the outcome is also ocean. It doesn't go outside ocean.
+
+471
+00:30:09,630 --> 00:30:10,990
+Speaker 1: You can also calculate the variances. 
+
+472
+00:30:11,270 --> 00:30:14,230
+Speaker 1: The variance of the outcome is the sum like geometric. 
+
+473
+00:30:15,110 --> 00:30:20,110
+Speaker 1: It made the summation of squared versions of the side equations. 
+
+474
+00:30:20,470 --> 00:30:25,270
+Speaker 1: That means so the variance of the outcome is summation of the those two variances.
+
+475
+00:30:25,910 --> 00:30:34,430
+Speaker 1: It kind of obvious right when you it makes sense intuitively that when you convert two different filters, the outcome is flatter compared to both of. 
+
+476
+00:30:36,200 --> 00:30:38,720
+Speaker 1: Cuz each one is trying to make the other one more flat, correct? 
+
+477
+00:30:39,040 --> 00:30:41,400
+Speaker 1: By flat, I mean fat, like blurry. 
+
+478
+00:30:41,640 --> 00:30:43,240
+Speaker 1: Each one tries to make the other one blurry. 
+
+479
+00:30:43,440 --> 00:30:48,120
+Speaker 1: Then if you have two filters, the convolution of those two is gonna be blurrier than both. 
+
+480
+00:30:48,760 --> 00:30:56,560
+Speaker 1: And that's why you see that the final variance is larger than each of these variances. The larger variance means more fat, right? 
+
+481
+00:30:57,080 --> 00:31:08,560
+Speaker 1: The function becomes more blade. So there are some. 
+
+482
+00:31:12,460 --> 00:31:14,860
+Speaker 1: Particular filters that are called separable filters. 
+
+483
+00:31:15,460 --> 00:31:29,900
+Speaker 1: That means if this is your filter, if it has some property, they can write that as convolution of two smaller filters, like in this case, I have a one dimensional filter in horizontal direction, one dimensional filter in the y direction. If I combine these two, you can show that. 
+
+484
+00:31:30,000 --> 00:31:31,960
+Speaker 1: The outcome is gonna be exactly this. 
+
+485
+00:31:32,720 --> 00:31:49,320
+Speaker 1: Okay, so for instance, Gaussian is one of those if this limited is Gaussian, like two dimensional Gaussian, you can ma write in math and prove that the two dimensional Gaussian can be written as convolution between two one dimensional Gaussians. This one is Gaussian. You see that like zero. 
+
+486
+00:31:50,110 --> 00:31:51,270
+Speaker 1: Going large number and zero. 
+
+487
+00:31:51,590 --> 00:31:54,190
+Speaker 1: Everybody sees that middle is the large number. 
+
+488
+00:31:54,430 --> 00:31:57,230
+Speaker 1: It's zero here, goes to large number and goes back to zero, right? 
+
+489
+00:31:57,390 --> 00:31:58,550
+Speaker 1: This one is another Gaussian. 
+
+490
+00:31:58,710 --> 00:32:01,310
+Speaker 1: It is zero here, goes to large number and it goes to zero. 
+
+491
+00:32:01,870 --> 00:32:05,910
+Speaker 1: Okay, if you combine these two they're gonna get a Gaussian that's like bell shaped. 
+
+492
+00:32:06,510 --> 00:32:09,950
+Speaker 1: It's a two Gaussian. That's another property of Gaussian functions. 
+
+493
+00:32:11,130 --> 00:32:12,690
+Speaker 1: Again, I don't want the math. 
+
+494
+00:32:12,850 --> 00:32:15,370
+Speaker 1: There is a proof for this, but I don't want you to go through the proof. 
+
+495
+00:32:18,170 --> 00:32:18,810
+Speaker 1: Any question? 
+
+496
+00:32:19,010 --> 00:32:23,530
+Speaker 1: Yeah, what's that? 
+
+497
+00:32:26,650 --> 00:32:28,570
+Speaker 1: For box filter also, you can make it separate. 
+
+498
+00:32:28,650 --> 00:32:29,130
+Speaker 1: It's exact. 
+
+499
+00:32:29,810 --> 00:32:32,370
+Speaker 1: It's not only for Gorshian. I'm just saying Gorshian have this one. 
+
+500
+00:32:32,820 --> 00:32:33,700
+Speaker 1: Yeah, exactly right. 
+
+501
+00:32:35,060 --> 00:32:49,220
+Speaker 1: Okay, so suppose I want to apply a box filter on the top of this image. 
+
+502
+00:32:49,220 --> 00:32:50,620
+Speaker 1: And the box filter is like this. 
+
+503
+00:32:51,220 --> 00:32:54,180
+Speaker 1: Essentially, I have to do is I have to add all these numbers, correct? 
+
+504
+00:32:54,980 --> 00:33:01,540
+Speaker 1: I have to add them and then divide by whatever is the number, right? This is the box filter. So the question is. 
+
+505
+00:33:01,920 --> 00:33:05,880
+Speaker 1: If I wanna do that for every location, that's another computation I have to pay, right? 
+
+506
+00:33:06,040 --> 00:33:08,600
+Speaker 1: Can you come up with a clever idea how to do it faster? 
+
+507
+00:33:10,720 --> 00:33:12,400
+Speaker 1: Basically, forget about the box filter now. 
+
+508
+00:33:12,600 --> 00:33:15,080
+Speaker 1: Basically, I want, I have a particular size of window like this. 
+
+509
+00:33:15,480 --> 00:33:18,240
+Speaker 1: I want to calculate all the numbers inside that window. 
+
+510
+00:33:18,840 --> 00:33:22,560
+Speaker 1: One way of doing that is for every location of the window, I have to just add all them together. 
+
+511
+00:33:22,930 --> 00:33:27,970
+Speaker 1: If this is 7 by 7, there are 49 numbers that they have to add. 
+
+512
+00:33:28,490 --> 00:33:36,730
+Speaker 1: The question, is there any way that they can get away with smaller computation, assuming that they want to do that for all possible location, I use a sliding window. 
+
+513
+00:33:37,250 --> 00:33:38,970
+Speaker 1: If you sliding window, how can you do that? 
+
+514
+00:33:41,450 --> 00:33:43,810
+Speaker 1: Yeah, we want to do sliding window. That means we want to actually. 
+
+515
+00:33:44,160 --> 00:33:46,440
+Speaker 1: You want to slide this window across the whole image. 
+
+516
+00:33:46,760 --> 00:33:49,800
+Speaker 1: And for every location of the image, I want to calculate the summation. 
+
+517
+00:33:50,520 --> 00:33:51,160
+Speaker 1: That's for sure. 
+
+518
+00:33:51,800 --> 00:33:58,480
+Speaker 1: But the question is, if I want to calculate for all locations, is there a clever way that I can speed this up? I can make it faster? 
+
+519
+00:34:00,530 --> 00:34:01,890
+Speaker 1: It doesn't really see my question. 
+
+520
+00:34:02,570 --> 00:34:03,330
+Speaker 1: Let me repeat that. 
+
+521
+00:34:03,570 --> 00:34:07,530
+Speaker 1: So I have this window, or I can actually talk you about this. 
+
+522
+00:34:07,770 --> 00:34:09,930
+Speaker 1: Let me just see here. 
+
+523
+00:34:10,370 --> 00:34:13,730
+Speaker 1: So you see that here I have this window and I can pass it along, right? 
+
+524
+00:34:13,770 --> 00:34:17,930
+Speaker 1: It's actually sliding every location. How many computation should I do? 
+
+525
+00:34:21,560 --> 00:34:27,040
+Speaker 1: 9 multiplications and 99 submission and 8 submissions right? 
+
+526
+00:34:27,080 --> 00:34:28,560
+Speaker 1: There is one less, right? 
+
+527
+00:34:29,320 --> 00:34:29,640
+Speaker 1: 8 plus 2+. 
+
+528
+00:34:30,040 --> 00:34:31,800
+Speaker 1: Yeah, the number of submissions are one thing. 
+
+529
+00:34:31,800 --> 00:34:36,000
+Speaker 1: So let's say 8 multiplications and 9 multiplication and 9 submission. 
+
+530
+00:34:36,600 --> 00:34:40,760
+Speaker 1: Okay, I have to do this much of computer and I have to repeat that for every possible location. 
+
+531
+00:34:41,890 --> 00:34:45,770
+Speaker 1: What happens if I increase the size of window to be maybe 11 by 11 or 7 by 7? 
+
+532
+00:34:46,530 --> 00:34:50,170
+Speaker 1: If it's 7 by 7, the number of compute becomes 49, correct? 
+
+533
+00:34:50,690 --> 00:34:51,650
+Speaker 1: And that's huge, right? 
+
+534
+00:34:51,650 --> 00:34:53,090
+Speaker 1: That might spend a lot of time, right? 
+
+535
+00:34:53,130 --> 00:34:54,690
+Speaker 1: Suppose you wanna do that in a zoom call. 
+
+536
+00:34:55,090 --> 00:35:02,130
+Speaker 1: Then for every frame that you capture, you have to do a lot of compute so that you can send that frame to the other person, to the other end of the zoom call. 
+
+537
+00:35:02,400 --> 00:35:04,120
+Speaker 1: And that is gonna introduce some latency. 
+
+538
+00:35:05,240 --> 00:35:06,920
+Speaker 1: Yeah, we wanna do that faster.
+
+539
+00:35:06,960 --> 00:35:12,240
+Speaker 1: And also, we don't want to use another CPU from the laptop because new customers are gonna say, no, I don't want that. 
+
+540
+00:35:12,320 --> 00:35:14,800
+Speaker 1: I'm gonna move to the Google Meet instead. 
+
+541
+00:35:15,520 --> 00:35:20,800
+Speaker 1: So how can we reduce the compute good group, Jason fares?
+
+542
+00:35:31,530 --> 00:35:34,170
+Speaker 1: I see any other answer getting closer. 
+
+543
+00:35:37,330 --> 00:35:38,690
+Speaker 1: So I can calculate this one. 
+
+544
+00:35:38,810 --> 00:35:40,130
+Speaker 1: Suppose I calculate one of them. 
+
+545
+00:35:40,410 --> 00:35:42,250
+Speaker 1: If I want to shift it one to the right. 
+
+546
+00:35:42,900 --> 00:35:45,500
+Speaker 1: I can add these ones and subtract these ones. 
+
+547
+00:35:48,340 --> 00:35:50,260
+Speaker 1: Do you agree that that's gonna be exactly identical? 
+
+548
+00:35:51,220 --> 00:35:54,940
+Speaker 1: But this way I have 14 calculations rather than 49.
+
+549
+00:35:55,620 --> 00:36:01,940
+Speaker 1: There's seven here and seven there, right? Seven summation, seven subtraction. Everybody gets that. 
+
+550
+00:36:02,940 --> 00:36:04,180
+Speaker 1: Can you say it again? 
+
+551
+00:36:04,340 --> 00:36:06,900
+Speaker 1: So suppose I calculated the summation for this one already. 
+
+552
+00:36:07,180 --> 00:36:09,180
+Speaker 1: Now I want to shift it by 1 pixel to the right. 
+
+553
+00:36:09,820 --> 00:36:15,900
+Speaker 1: Then I can add these 7 numbers to the total summation and subtract these seven numbers from the total summation. 
+
+554
+00:36:16,420 --> 00:36:17,580
+Speaker 1: Do you agree that's identical? 
+
+555
+00:36:18,300 --> 00:36:18,660
+Speaker 1: Okay. 
+
+556
+00:36:18,860 --> 00:36:23,580
+Speaker 1: Then that's one way that I can use, correct? Then I can go from. 
+
+557
+00:36:25,100 --> 00:36:26,580
+Speaker 1: 49 to only 14. 
+
+558
+00:36:27,180 --> 00:36:30,180
+Speaker 1: Another word is going from order of n square to order of n. 
+
+559
+00:36:30,380 --> 00:36:31,180
+Speaker 1: Remember order. 
+
+560
+00:36:31,500 --> 00:36:32,700
+Speaker 1: I've used the algorithms.
+
+561
+00:36:32,940 --> 00:36:33,980
+Speaker 1: Order of algorithm. 
+
+562
+00:36:35,500 --> 00:36:36,300
+Speaker 1: Okay, don't worry about it. 
+
+563
+00:36:36,620 --> 00:36:38,540
+Speaker 1: Anybody knows what order of n square means? 
+
+564
+00:36:40,740 --> 00:36:41,420
+Speaker 1: Don't worry about it. 
+
+565
+00:36:41,460 --> 00:36:45,900
+Speaker 1: Okay, so here you have to do 49 and but this way you're gonna do only 14. 
+
+566
+00:36:46,020 --> 00:36:48,460
+Speaker 1: But I'm arguing that there's even a faster way of doing that.
+
+567
+00:36:51,180 --> 00:37:03,980
+Speaker 4: You do multiple layers of small filter size faster because every filter size to 3, right, it becomes 1 and then do another layer of 3 by 3 on the new tree. 
+
+568
+00:37:04,180 --> 00:37:05,060
+Speaker 4: Yeah, yeah, you could. 
+
+569
+00:37:05,060 --> 00:37:08,620
+Speaker 4: But the one that I'm suggesting is actually even cheaper. It's way cheaper than you.
+
+570
+00:37:08,760 --> 00:37:09,120
+Speaker 1: You're right. 
+
+571
+00:37:09,160 --> 00:37:10,080
+Speaker 1: That's a better algorithm. 
+
+572
+00:37:10,320 --> 00:37:11,800
+Speaker 1: But then discussing is much cheaper. 
+
+573
+00:37:12,240 --> 00:37:14,240
+Speaker 1: Any other idea how to make it much cheaper? 
+
+574
+00:37:16,400 --> 00:37:19,680
+Speaker 1: So there's a very interesting idea actually that is called integral images. 
+
+575
+00:37:19,720 --> 00:37:32,680
+Speaker 1: The idea is this, let's, as soon as you receive the image, let's calculate the summation of every number for every pixel, like this pixel, let's calculate the summation of all the numbers in this box. 
+
+576
+00:37:33,640 --> 00:37:35,800
+Speaker 1: Like this one is gonna be submission of all of them. 
+
+577
+00:37:36,040 --> 00:37:37,840
+Speaker 1: This one is gonna be submission of all this one. 
+
+578
+00:37:37,960 --> 00:37:42,640
+Speaker 1: So any pixel to the left and above that pixel, I'm gonna add them all together. 
+
+579
+00:37:43,360 --> 00:37:44,120
+Speaker 1: Clear so far? 
+
+580
+00:37:44,800 --> 00:37:52,760
+Speaker 1: In other words, the new image is the integration of the old image. Remember integration, everybody remember integral from math, integral like. 
+
+581
+00:37:53,180 --> 00:37:56,620
+Speaker 1: Area under the curve, like summation from beginning all the way to here. 
+
+582
+00:37:56,620 --> 00:37:57,540
+Speaker 1: That's exact same thing, right? 
+
+583
+00:37:57,540 --> 00:37:58,540
+Speaker 1: It's a 2D integral. 
+
+584
+00:37:58,860 --> 00:38:03,020
+Speaker 1: It's summation from beginning, which is here, 0,0, all the way to that point. 
+
+585
+00:38:04,260 --> 00:38:05,660
+Speaker 1: Suppose I calculate that first. 
+
+586
+00:38:06,300 --> 00:38:12,820
+Speaker 1: Now, given a particular window, I'm arguing that if you wanna calculate the values inside this window. 
+
+587
+00:38:13,260 --> 00:38:29,180
+Speaker 1: The only thing you have to do is you have to take value in d, which is summation of all of them, subtract B from it, then all these stuff is subtracted out and subtract C from it, then all these stuff is again subtracted out and you realize that it's actually the area that you want. 
+
+588
+00:38:29,260 --> 00:38:32,660
+Speaker 1: But the problem is this area is subtracted twice, then you add back in. 
+
+589
+00:38:33,530 --> 00:38:39,650
+Speaker 1: So the total thing is B minus size d minus B minus C+ a. 
+
+590
+00:38:40,770 --> 00:38:54,930
+Speaker 1: You see that using only 4 summations, now I can calculate the area for any possible placement of the window. You see what happened? That's called integral images. Usually. 
+
+591
+00:38:55,370 --> 00:38:59,850
+Speaker 1: So then it boils down to this, for any image that arrives first. 
+
+592
+00:39:00,000 --> 00:39:04,640
+Speaker 1: What I'm gonna do is I'm gonna in generate that integral images, which is this one, right? 
+
+593
+00:39:04,640 --> 00:39:14,600
+Speaker 1: That is not very difficult to generate basically, because if you calculate the location here, as soon as you want to calculate this one, it's just enough to just calculate, add one number to it, right? 
+
+594
+00:39:14,640 --> 00:39:15,600
+Speaker 1: It's just running stuff. 
+
+595
+00:39:16,000 --> 00:39:17,640
+Speaker 1: You're gonna calculate this integral image. 
+
+596
+00:39:17,800 --> 00:39:22,040
+Speaker 1: As soon as we calculate integral image, then for any window, you can easily just add them up. 
+
+597
+00:39:22,380 --> 00:39:32,060
+Speaker 1: Using only 4, like 3, basically some measures, 8+ d plus minus minus B minus C. Is it clever? Something?
+
+598
+00:39:37,130 --> 00:39:55,730
+Speaker 4: Yeah, so what if what happens when you get the image top left position, like top to the upper left, all this on the upper left. 
+
+599
+00:39:56,730 --> 00:39:59,890
+Speaker 4: What if I like put this, for example, the other.
+
+600
+00:40:00,040 --> 00:40:08,160
+Speaker 1: So what's that mean? 
+
+601
+00:40:08,160 --> 00:40:10,640
+Speaker 1: Like, how do you know where it's like a pixel? 
+
+602
+00:40:12,120 --> 00:40:16,360
+Speaker 1: No, as soon as the image arrives, I'm gonna calculate these values for all pixels. 
+
+603
+00:40:17,280 --> 00:40:18,400
+Speaker 1: Oh, all pixels. 
+
+604
+00:40:18,400 --> 00:40:19,160
+Speaker 1: I'm gonna do that here. 
+
+605
+00:40:19,160 --> 00:40:24,240
+Speaker 1: I'm just trying three of them, but I'm gonna do it for every possible, with every possible pixel in the image. 
+
+606
+00:40:24,430 --> 00:40:26,030
+Speaker 1: Okay, that's the pre processing. 
+
+607
+00:40:26,390 --> 00:40:33,190
+Speaker 1: And now any query that you give me, like I want to calculate the summation of these window, I'm gonna just provide that to you in very efficiently.
+
+608
+00:40:33,590 --> 00:40:40,790
+Speaker 1: Okay, so we have this another computer vision that for instance, one thing that's actually very popular nowadays is this. 
+
+609
+00:40:41,190 --> 00:40:44,150
+Speaker 1: Given an image, I want to describe pieces of it. 
+
+610
+00:40:45,170 --> 00:40:51,650
+Speaker 1: Okay, and what I can do is describe, it means like I wanna draw a window and I want the mother to tell me what is inside the window. 
+
+611
+00:40:52,010 --> 00:40:55,690
+Speaker 1: Like your robot wants to know what is here so that I should go and interact with it or not.
+
+612
+00:40:55,730 --> 00:41:01,530
+Speaker 1: Okay, then what we can do is we can process the image first, just make, it's usually called embedding. 
+
+613
+00:41:01,610 --> 00:41:04,330
+Speaker 1: We can make an embedding which is somewhat similar to this integral images. 
+
+614
+00:41:04,770 --> 00:41:06,930
+Speaker 1: Then there is a very efficient algorithm. 
+
+615
+00:41:06,970 --> 00:41:11,410
+Speaker 1: But for any window that the robot is querying, we can very efficiently, we can see what is inside. 
+
+616
+00:41:12,740 --> 00:41:13,500
+Speaker 1: You see what I mean? 
+
+617
+00:41:13,780 --> 00:41:16,380
+Speaker 1: So that's very helpful if the number of queries are large. 
+
+618
+00:41:16,980 --> 00:41:21,420
+Speaker 1: Suppose the robot captures one image and wants to query different parts of the image to know what is inside it. 
+
+619
+00:41:21,900 --> 00:41:23,620
+Speaker 1: Then we process that image once. 
+
+620
+00:41:24,220 --> 00:41:33,460
+Speaker 1: And now that we process, it is very efficient to actually just query or even people have worked on developing versions of that. Pre processing is happening on the cloud. 
+
+621
+00:41:33,890 --> 00:41:37,610
+Speaker 1: And they send that integral images like this stuff, like embedding to the browser. 
+
+622
+00:41:38,010 --> 00:41:47,170
+Speaker 1: And as soon as the query, actually, the whole thing is running on the browser because this solution is so efficient that you can even run in Javascript is inside your Chrome, right? 
+
+623
+00:41:47,210 --> 00:41:48,290
+Speaker 1: It's super cheap, right? 
+
+624
+00:41:48,370 --> 00:41:50,130
+Speaker 1: You don't need to do a lot of computations, right? 
+
+625
+00:41:50,570 --> 00:41:52,250
+Speaker 1: So the computation is happening on the cloud. 
+
+626
+00:41:52,730 --> 00:41:56,490
+Speaker 1: And the computation result, the three pressing results are shipped to your browser. 
+
+627
+00:41:56,920 --> 00:42:01,000
+Speaker 1: And now any query that you have about this image, it can fast, you can answer it very fast. 
+
+628
+00:42:01,720 --> 00:42:02,720
+Speaker 1: Do they answer questions?
+
+629
+00:42:02,760 --> 00:42:04,960
+Speaker 1: Yeah, sorry. 
+
+630
+00:42:05,040 --> 00:42:08,760
+Speaker 1: Can you explain again why this algorithm is more efficient? 
+
+631
+00:42:09,200 --> 00:42:09,280
+Speaker 1: Sure. 
+
+632
+00:42:09,600 --> 00:42:19,840
+Speaker 1: So let me make sure that we understand the algorithm that for image, image, for any image, we're gonna convert that image into another image, which is the same size. 
+
+633
+00:42:20,350 --> 00:42:26,590
+Speaker 1: But every location is not the color of that pixels is summation of the colors of all pixels to the left and above. 
+
+634
+00:42:27,230 --> 00:42:30,710
+Speaker 1: Okay, now that I have this image, let's call that, you know, the post process image. 
+
+635
+00:42:31,350 --> 00:42:42,910
+Speaker 1: Then for any window that they want to add all the numbers inside, the only thing I have to do is I have to take d, subtract B from it, because d is summation of all these pixels. You agree? 
+
+636
+00:42:43,230 --> 00:42:49,110
+Speaker 1: If I subtract B and subtract C and add a to it, I'm gonna get the summation of all these pixels here. 
+
+637
+00:42:49,510 --> 00:42:49,870
+Speaker 1: That's it. 
+
+638
+00:42:50,310 --> 00:42:53,550
+Speaker 1: So instead of adding all these numbers, suppose this window is 7 by 7.
+
+639
+00:42:54,110 --> 00:43:03,430
+Speaker 1: Ideally, I had to do, initially I had to do 49 summations, but now I just do one summation and two subtractions. It's efficient. 
+
+640
+00:43:04,650 --> 00:43:06,050
+Speaker 1: But it's not efficient by itself, right? 
+
+641
+00:43:06,090 --> 00:43:09,450
+Speaker 1: You have paid the past costs and the preprocess, but you pay that only once. 
+
+642
+00:43:10,170 --> 00:43:15,370
+Speaker 1: So if the number of queries are large, you do preprocesses once and now you can process another query. 
+
+643
+00:43:16,090 --> 00:43:17,330
+Speaker 1: It's similar to convolution, right? 
+
+644
+00:43:17,330 --> 00:43:21,610
+Speaker 1: In convolution, you presses advance, like the number of queries are very large, right? 
+
+645
+00:43:21,610 --> 00:43:24,450
+Speaker 1: For every window location, you have to calculate the result of cost.
+
+646
+00:43:25,020 --> 00:43:29,580
+Speaker 1: Right, then what you can do is you process the image once and get the integral image, which is those summation. 
+
+647
+00:43:30,020 --> 00:43:35,940
+Speaker 1: And now for any possible location of the filter, just calculate it this way, right? 
+
+648
+00:43:36,060 --> 00:43:38,780
+Speaker 1: Then you can actually run it on maybe zoom in real time. 
+
+649
+00:43:38,900 --> 00:43:41,380
+Speaker 1: So you don't need to wait for a lot of computation.
+
+650
+00:43:42,140 --> 00:43:48,460
+Speaker 1: I feel like there's one point really confusing where for the, does that refer to the highlight part or just like the red part? 
+
+651
+00:43:48,710 --> 00:43:54,110
+Speaker 1: Of the value in d is summation of any pixel to left and up. 
+
+652
+00:43:54,710 --> 00:43:59,590
+Speaker 1: So it's like the entire highlighted part, like suppose this is d, right? 
+
+653
+00:43:59,950 --> 00:44:02,110
+Speaker 1: The entire thing here is gonna be considered d. 
+
+654
+00:44:03,430 --> 00:44:06,310
+Speaker 1: You see that all pixels here are some together that is d. 
+
+655
+00:44:07,430 --> 00:44:11,550
+Speaker 1: So which means we have to know like the value of the sum of. 
+
+656
+00:44:11,980 --> 00:44:15,260
+Speaker 1: All the values in the in advance in order to make this work.
+
+657
+00:44:15,780 --> 00:44:16,060
+Speaker 1: Okay. 
+
+658
+00:44:16,140 --> 00:44:19,220
+Speaker 1: As soon as the image comes in, we're gonna do this operation, right? 
+
+659
+00:44:19,540 --> 00:44:21,180
+Speaker 1: And convert that image into this image. 
+
+660
+00:44:21,220 --> 00:44:24,060
+Speaker 1: Then does that mean you have to do is recursively for like the. 
+
+661
+00:44:24,220 --> 00:44:24,660
+Speaker 1: Yes, yes. 
+
+662
+00:44:24,700 --> 00:44:24,940
+Speaker 1: Okay. 
+
+663
+00:44:25,420 --> 00:44:25,820
+Speaker 1: It's a reason. 
+
+664
+00:44:25,900 --> 00:44:26,380
+Speaker 1: Yeah, it's not really. 
+
+665
+00:44:26,380 --> 00:44:27,900
+Speaker 1: Yeah, it's a reason, right? 
+
+666
+00:44:27,900 --> 00:44:33,420
+Speaker 1: So you calculate, you already know this number, you add this one, you're gonna get this number, you add. 
+
+667
+00:44:33,870 --> 00:44:37,630
+Speaker 1: This these two you're gonna get this number and I think these two you're gonna get this number. 
+
+668
+00:44:37,670 --> 00:44:41,830
+Speaker 1: You see that you grow it from the corner, you start from the top left corner and start growing it. 
+
+669
+00:44:42,430 --> 00:44:44,790
+Speaker 1: I just think that calculation is not super hard.
+
+670
+00:44:46,350 --> 00:44:51,990
+Speaker 1: Again, it's almost similar to calculating summation of all the pixel values. 
+
+671
+00:44:52,430 --> 00:44:55,270
+Speaker 1: This that process, which is cheaper. You do that once. 
+
+672
+00:44:55,730 --> 00:44:59,990
+Speaker 1: But then the querying will ask any other question.
+
+673
+00:45:01,910 --> 00:45:12,190
+Speaker 3: In what this is beneficial, like what is a situation where you need to do the submission of, yeah, here's, oh yeah, convolution, right? 
+
+674
+00:45:12,230 --> 00:45:14,550
+Speaker 3: For every possible location, you need to set the whole lecture. 
+
+675
+00:45:15,550 --> 00:45:15,910
+Speaker 3: Okay. 
+
+676
+00:45:16,230 --> 00:45:21,230
+Speaker 3: If your window is small, to be honest, it doesn't matter. Okay? But it's like for a bigger window, okay.
+
+677
+00:45:22,480 --> 00:45:23,040
+Speaker 2: Any other? 
+
+678
+00:45:23,040 --> 00:45:32,640
+Speaker 2: Yeah, do you know where I can like visualize like an execution, like an execution of the integral image hour from like end to end, like starting, finish. 
+
+679
+00:45:32,680 --> 00:45:35,040
+Speaker 2: I can see it like every step that I want to. 
+
+680
+00:45:36,240 --> 00:45:37,000
+Speaker 2: Where do you mean? 
+
+681
+00:45:37,240 --> 00:45:37,840
+Speaker 2: How do you write it? 
+
+682
+00:45:37,840 --> 00:45:40,360
+Speaker 2: Good, like visualize it basically. 
+
+683
+00:45:41,520 --> 00:45:46,160
+Speaker 2: Cuz that's one step of the, like the image you have in the size is like one step in the process. 
+
+684
+00:45:46,280 --> 00:45:48,920
+Speaker 2: Like what happens on like the next iteration of the hour.
+
+685
+00:45:52,590 --> 00:45:53,670
+Speaker 1: I don't understand. 
+
+686
+00:45:53,790 --> 00:45:57,630
+Speaker 1: So given the image, I'm gonna run this algorithm that calculates integral. 
+
+687
+00:45:57,790 --> 00:45:59,990
+Speaker 1: Yeah, that's gonna produce another image, right? 
+
+688
+00:46:00,430 --> 00:46:02,150
+Speaker 1: But the new image is a very weird image. 
+
+689
+00:46:02,190 --> 00:46:05,670
+Speaker 1: The top left corner is very dark, which is one pixel only. 
+
+690
+00:46:05,910 --> 00:46:09,350
+Speaker 1: But the bottom right corner is super bright, right? It's a mission of all the people.
+
+691
+00:46:10,910 --> 00:46:18,430
+Speaker 2: In this image, right, if I slide the red box filter over by one column, what would happen to the blue box and green box? 
+
+692
+00:46:18,950 --> 00:46:27,990
+Speaker 2: Like, yeah, in the previous image, right, the red box, like normally you run the box filter over the entire image, right? 
+
+693
+00:46:28,310 --> 00:46:34,710
+Speaker 2: So on the next step of the algorithm, the red box filter would move to the next column. No, that's the key.
+
+694
+00:46:35,040 --> 00:46:37,440
+Speaker 1: All of those boxes are anchored on the top left corner. 
+
+695
+00:46:37,440 --> 00:46:41,040
+Speaker 1: You see that all these three, they're always from the top left corner. 
+
+696
+00:46:41,520 --> 00:46:47,480
+Speaker 1: So any value that I calculate here is summation of all the pixels on the left and top. 
+
+697
+00:46:49,240 --> 00:46:50,440
+Speaker 1: This box cannot move. 
+
+698
+00:46:51,560 --> 00:46:57,960
+Speaker 1: So the value that I calculate here is summation of any pixel is which is to the left and above this pixel.
+
+699
+00:47:00,620 --> 00:47:02,580
+Speaker 1: Okay, can I pick any other place? 
+
+700
+00:47:02,660 --> 00:47:03,420
+Speaker 1: Yeah, like here. 
+
+701
+00:47:03,700 --> 00:47:07,980
+Speaker 1: If you pick here, right, then this window is gonna be submission. 
+
+702
+00:47:09,460 --> 00:47:10,460
+Speaker 1: Do you follow my mouse? 
+
+703
+00:47:11,260 --> 00:47:20,220
+Speaker 1: Okay, so instead of moving the box filter around to expand the area, yeah, we first calculate the value for all the box filters. 
+
+704
+00:47:20,630 --> 00:47:27,190
+Speaker 1: That are anchored at this point, any box filler that the top left corner is here, calculate all of them. 
+
+705
+00:47:27,430 --> 00:47:36,430
+Speaker 1: And now for any other box filler, so this box filler doesn't need to have this on the left corner since this is not on the left corner, top left corner. 
+
+706
+00:47:36,470 --> 00:47:37,110
+Speaker 1: But they can do this.
+
+707
+00:47:37,110 --> 00:47:41,470
+Speaker 1: I can subtract this one as a. And that's good. If the window here. 
+
+708
+00:47:41,830 --> 00:47:48,830
+Speaker 1: But starting from here, then I didn't need to put any computation, just calculate number D and d, this submission, everything, right? 
+
+709
+00:47:49,590 --> 00:48:00,030
+Speaker 1: But since this corner is not on the top of the corner, I need to subtract D&C and add it. We can discuss after that. Any other question?
+
+710
+00:48:13,260 --> 00:48:16,540
+Speaker 3: Wait, nor, nor. Yeah, what's up?

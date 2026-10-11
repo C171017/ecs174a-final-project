@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-10-11T17:18:15.519224+00:00",
+  "sourceCatalogUpdatedAt": "2026-10-11T17:13:01.296747+00:00",
+  "recordingCount": 3,
+  "transcriptCount": 6,
+  "audioBytes": 153746827,
+  "entries": [
+    {
+      "id": "feishu:obcncbs28hxp26qiz1l9f162--80eefb5a8438",
+      "title": "Image Filtering Discussion",
+      "provider": "feishu",
+      "transcriptProvider": "feishu",
+      "recordedAt": "2026-09-29T14:11:00-07:00",
+      "dateNote": "Date parsed from provider display",
+      "durationSeconds": 2902,
+      "audio": null,
+      "audioBytes": null,
+      "transcript": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/transcript.raw.txt",
+      "extras": [
+        {
+          "label": "Exported TXT",
+          "url": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/exports/01-transcript.txt"
+        },
+        {
+          "label": "Subtitles · SRT",
+          "url": "recordings/Feishu/obcncbs28hxp26qiz1l9f162--80eefb5a8438/revisions/c5a40d01da451c71debb9e4219850f0b947bce72e390961900a884530b24890c/exports/02-transcript.srt"
+        }
+      ]
+    },
+    {
+      "id": "soundcore:d37e125d9fb8230010f516fd8d4845dd1a3b02d906920e92b15f63c19a1ee508",
+      "title": "2026-09-29 14:11:01",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-09-29 14:11:01",
+      "dateNote": "Recording title time",
+      "durationSeconds": 2968.659592,
+      "audio": "recordings/2026-09-29_14-11-01--d37e125d/audio.mp3",
+      "audioBytes": 47499013,
+      "transcript": "recordings/2026-09-29_14-11-01--d37e125d/transcript.raw.txt",
+      "extras": []
+    },
+    {
+      "id": "feishu:obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509",
+      "title": "Course Content Briefing",
+      "provider": "feishu",
+      "transcriptProvider": "feishu",
+      "recordedAt": "2026-09-25T12:07:00-07:00",
+      "dateNote": "Date parsed from provider display",
+      "durationSeconds": 1563,
+      "audio": null,
+      "audioBytes": null,
+      "transcript": "recordings/Feishu/obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509/revisions/5388f22337fece42f9dde399fe9eb5ea9064f14c58a57b5389f36b4be673dc1b/transcript.raw.txt",
+      "extras": [
+        {
+          "label": "Exported TXT",
+          "url": "recordings/Feishu/obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509/revisions/5388f22337fece42f9dde399fe9eb5ea9064f14c58a57b5389f36b4be673dc1b/exports/01-transcript.txt"
+        },
+        {
+          "label": "Subtitles · SRT",
+          "url": "recordings/Feishu/obcn9im2ct7fk1qlwfvxn2f4--81f403e8b509/revisions/5388f22337fece42f9dde399fe9eb5ea9064f14c58a57b5389f36b4be673dc1b/exports/02-transcript.srt"
+        }
+      ]
+    },
+    {
+      "id": "soundcore:99dabae62c1c25defa2beb8e9387a6e966269be86b29e6c7ba290a8172d6019f",
+      "title": "2026-09-25 12:06:59",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-09-25 12:06:59",
+      "dateNote": "Recording title time",
+      "durationSeconds": 1734.713469,
+      "audio": "recordings/2026-09-25_12-06-59--99dabae6/audio.mp3",
+      "audioBytes": 27755875,
+      "transcript": "recordings/2026-09-25_12-06-59--99dabae6/transcript.raw.txt",
+      "extras": []
+    },
+    {
+      "id": "feishu:obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e",
+      "title": "Computer Vision Course Introduction",
+      "provider": "feishu",
+      "transcriptProvider": "feishu",
+      "recordedAt": "2026-09-24T13:38:00-07:00",
+      "dateNote": "Date parsed from provider display",
+      "durationSeconds": 4850,
+      "audio": null,
+      "audioBytes": null,
+      "transcript": "recordings/Feishu/obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e/revisions/9b7cb4aae79b8b1df4126592621ec90ef2689f8ca628e266c85ebbd96659b61b/transcript.raw.txt",
+      "extras": [
+        {
+          "label": "Exported TXT",
+          "url": "recordings/Feishu/obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e/revisions/9b7cb4aae79b8b1df4126592621ec90ef2689f8ca628e266c85ebbd96659b61b/exports/01-transcript.txt"
+        },
+        {
+          "label": "Subtitles · SRT",
+          "url": "recordings/Feishu/obcn8ub9rt13u384257ev4y3--7f7d5b73ce9e/revisions/9b7cb4aae79b8b1df4126592621ec90ef2689f8ca628e266c85ebbd96659b61b/exports/02-transcript.srt"
+        }
+      ]
+    },
+    {
+      "id": "soundcore:9d12e94a5e95538fe6f6d9a1b35104e365a9e967fae1bc54a574930f6089a70d",
+      "title": "2026-09-24 13:37:57",
+      "provider": "soundcore",
+      "transcriptProvider": "superwhisper",
+      "recordedAt": "2026-09-24 13:37:57",
+      "dateNote": "Recording title time",
+      "durationSeconds": 4905.717551,
+      "audio": "recordings/2026-09-24_13-37-57/audio.mp3",
+      "audioBytes": 78491939,
+      "transcript": "recordings/2026-09-24_13-37-57/transcript.raw.txt",
+      "extras": []
+    }
+  ]
+}

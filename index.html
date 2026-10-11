@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ECS 174A group workspace: browse, listen to, search, and download saved course recordings and transcripts.">
+  <title>ECS 174A · Course library</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#library">Skip to recordings</a>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-icon" aria-hidden="true">◩</span> ECS 174A <span class="brand-divider">/</span> <span class="brand-sub">Group workspace</span></a>
+    <a class="repo-link" href="https://github.com/C171017/ecs174a-final-project">GitHub repository <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="status-dot"></span> COMPUTER VISION · FALL 2026</div>
+      <h1 id="page-title">The course,<br><span>in one place.</span></h1>
+      <p class="intro-copy">A shared shelf of recordings and transcripts for our final project. Listen back, find a passage, or take the files with you.</p>
+      <div class="intro-actions">
+        <a class="button primary" href="transcripts.zip" download>Download transcript bundle <span aria-hidden="true">↓</span></a>
+        <a class="button secondary" href="https://github.com/C171017/ecs174a-final-project/archive/refs/heads/main.zip">Download entire repository <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="stats" aria-label="Library totals">
+        <div><strong id="audio-count">—</strong><span>audio recordings</span></div>
+        <div><strong id="transcript-count">—</strong><span>transcript sources</span></div>
+        <div><strong id="audio-hours">—</strong><span>saved audio</span></div>
+      </div>
+    </section>
+    <section id="library" class="library" aria-labelledby="library-title">
+      <div class="library-heading"><div><div class="eyebrow">THE ARCHIVE</div><h2 id="library-title">Course library</h2></div><span id="snapshot" class="snapshot"></span></div>
+      <div class="toolbar">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search titles or transcript text…" aria-label="Search titles and transcripts"><kbd aria-hidden="true">/</kbd></label>
+        <label class="filter"><span class="sr-only">Filter by source</span><select id="provider"><option value="all">All sources</option><option value="soundcore">Soundcore / Superwhisper</option><option value="feishu">Feishu</option></select></label>
+      </div>
+      <div class="results-line"><span id="result-count" role="status" aria-live="polite">Loading library…</span><span class="file-note">Original files · direct downloads</span></div>
+      <div id="cards" class="cards"></div>
+      <p id="empty" class="empty" hidden>No matches. Try another word or source.</p>
+      <noscript><p>Enable JavaScript to search and preview, or <a href="transcripts.zip">download the transcripts</a> and <a href="https://github.com/C171017/ecs174a-final-project">browse the repository</a>.</p></noscript>
+    </section>
+    <aside class="context"><span aria-hidden="true">ⓘ</span><p>Soundcore audio and Superwhisper transcripts are saved together. Feishu transcripts are separate sources; no Feishu audio was saved in the course archive. Transcripts may contain errors. Use the audio to check uncertain wording.</p></aside>
+  </main>
+  <footer><span>ECS 174A · Final project workspace</span><a href="https://github.com/C171017/ecs174a-final-project/blob/main/docs/PROJECT.md">Project planning <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

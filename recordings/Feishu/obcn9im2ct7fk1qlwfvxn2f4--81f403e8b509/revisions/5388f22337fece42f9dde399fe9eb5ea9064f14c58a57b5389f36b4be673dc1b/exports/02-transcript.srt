@@ -1,0 +1,840 @@
+
+1
+00:01:30,000 --> 00:01:36,440
+Speaker 1: I did my undergrad here for the past four years. 
+
+2
+00:01:36,440 --> 00:01:38,360
+Speaker 1: I've worked with them since 2020. 
+
+3
+00:01:38,360 --> 00:01:42,800
+Speaker 1: So I've taught versions of this class. 
+
+4
+00:01:43,400 --> 00:01:52,840
+Speaker 1: And so for how to get in touch with me if you need to ask about my seminar or like exam or anything like that, is that going to need to do for them? 
+
+5
+00:01:53,410 --> 00:01:56,570
+Speaker 1: Generally just give me a lot so that everyone can see it. 
+
+6
+00:01:56,810 --> 00:02:04,770
+Speaker 1: You guys can also use like the offer or something, but I don't know, it doesn't always send email to you. 
+
+7
+00:02:05,410 --> 00:02:13,810
+Speaker 1: And you can also send me email, but like this, I don't know, I don't respond to that sign, you know, that often. So just like. 
+
+8
+00:02:14,060 --> 00:02:14,260
+Speaker 1: And for pretty much anything else.
+
+9
+00:02:14,260 --> 00:02:29,980
+Speaker 1: And most of like just don't bother the other team. 
+
+10
+00:02:29,980 --> 00:02:31,060
+Speaker 1: I don't even know. 
+
+11
+00:02:31,540 --> 00:02:35,980
+Speaker 1: Like, yeah, I like just don't bother him. I am going to probably like. 
+
+12
+00:02:36,270 --> 00:02:37,670
+Speaker 1: Yeah, like a lesser appointment. 
+
+13
+00:02:37,670 --> 00:02:41,750
+Speaker 1: So I'm probably gonna have to do like more of the grading and less of the. 
+
+14
+00:02:42,590 --> 00:02:56,550
+Speaker 1: So, okay, so about this discussion, so today I have a video like find out with like most of the sources and stuff like that. 
+
+15
+00:02:56,820 --> 00:03:06,380
+Speaker 1: But after starting next week, this actually is like what I do want. 
+
+16
+00:03:06,940 --> 00:03:09,020
+Speaker 1: They don't want me to like review something. 
+
+17
+00:03:09,060 --> 00:03:18,100
+Speaker 1: I'm excited for that. But like in general, this is like something like. 
+
+18
+00:03:18,850 --> 00:03:20,490
+Speaker 1: And I'll probably do that. 
+
+19
+00:03:20,650 --> 00:03:29,650
+Speaker 1: Like I can go over like projects, I can review projects, I can like when I write the exam, I can like tell you guys what all the exam. 
+
+20
+00:03:30,490 --> 00:03:37,210
+Speaker 1: So it's just gonna be now about like, are there any questions about that, by the way? 
+
+21
+00:03:40,070 --> 00:03:45,870
+Speaker 1: So about like t, Rex, so you don't know how to code, you need to learn how to know how to code. 
+
+22
+00:03:46,510 --> 00:03:53,670
+Speaker 1: Like if you're biology, you need to know how to code, like hopefully you know Python, but we're not really gonna cover that. 
+
+23
+00:03:54,150 --> 00:03:59,390
+Speaker 1: So just kind of like, you know, how to code like how to do and.
+
+24
+00:04:00,880 --> 00:04:06,040
+Speaker 1: I guess my understanding is for this class, there is no normal way to recognize. 
+
+25
+00:04:06,080 --> 00:04:08,960
+Speaker 1: So we have to buy. 
+
+26
+00:04:10,560 --> 00:04:22,120
+Speaker 1: So the unfortunate news is that they should require the department to require the replacement before, but it's effectively like required in terms of like the new base. 
+
+27
+00:04:22,990 --> 00:04:32,430
+Speaker 1: And I'll look for that on the next slide, but a good textbook that I want to point out is that I don't think I'm going to do this on this side, but this textbook is really good. 
+
+28
+00:04:32,590 --> 00:04:40,150
+Speaker 1: It's like brand new and it's, you know, by like the lowest type of people and it's just like really well written. 
+
+29
+00:04:40,150 --> 00:04:40,910
+Speaker 1: I really like it. 
+
+30
+00:04:40,950 --> 00:04:44,470
+Speaker 1: So if you're having trouble with the concepts, you want to.
+
+31
+00:04:44,840 --> 00:04:55,840
+Speaker 1: But it's not like we're not like following it like day by day. 
+
+32
+00:04:57,840 --> 00:05:01,880
+Speaker 1: Okay, so I'm just gonna leave this out. 
+
+33
+00:05:02,040 --> 00:05:07,920
+Speaker 1: But if you don't know how to do any of these, like off the top of your head, like with a little bit of thinking. 
+
+34
+00:05:08,540 --> 00:05:10,860
+Speaker 1: Like you should probably drop it off. 
+
+35
+00:05:10,860 --> 00:05:14,140
+Speaker 1: You should come to me and like talk to me afterwards.
+
+36
+00:05:14,780 --> 00:05:23,060
+Speaker 1: But like the reality is most of what we do in class, yeah, I'll send them on campus page. 
+
+37
+00:05:23,500 --> 00:05:30,180
+Speaker 1: But yeah, like if you don't know how to do these, like often, like mostly off the top of your head. 
+
+38
+00:05:30,490 --> 00:05:40,610
+Speaker 1: Unfortunately, you're kind of like, you're like, you're, I don't know how to like day one, we basically assume, you know, like matrix multiplication. 
+
+39
+00:05:40,730 --> 00:05:44,810
+Speaker 1: If you don't know that, you're like, yeah, I don't know how you're gonna do this class. 
+
+40
+00:05:45,490 --> 00:05:51,410
+Speaker 1: Like everything else is, you will like hold your hand for everything else, but the basic like not stuff. 
+
+41
+00:05:51,740 --> 00:05:53,180
+Speaker 1: It's like really fundamental. 
+
+42
+00:05:53,380 --> 00:06:11,940
+Speaker 1: And in the same way, you kind of need to know how to add to your formulas, you kind of need to know how to do what makes it more like, yeah, I don't talk more about that, like on a personal level. So about the class. 
+
+43
+00:06:12,860 --> 00:06:27,100
+Speaker 1: There's gonna be some like homework assignments and like there, I don't really think there are any more. 
+
+44
+00:06:27,100 --> 00:06:29,780
+Speaker 1: Then I don't want to Mark you off lines like. 
+
+45
+00:06:32,680 --> 00:06:43,240
+Speaker 1: So as far as rating goes, the rating is complete, but I promise you that like, I will write a question on the exam about the homework. 
+
+46
+00:06:43,880 --> 00:06:50,160
+Speaker 1: Like it will be like, almost like here is a problem that was in the homework now, right? From the question. 
+
+47
+00:06:51,700 --> 00:06:57,060
+Speaker 1: Yes, yeah, we write them all together.
+
+48
+00:06:57,140 --> 00:07:02,100
+Speaker 1: But I have like, I'm a student, so it's like, I know what he does. 
+
+49
+00:07:02,180 --> 00:07:07,980
+Speaker 1: I know like, and like, yeah, I pretty much do most of the things. 
+
+50
+00:07:08,380 --> 00:07:13,660
+Speaker 1: I might give this to the other today, but it's like really like Season. 
+
+51
+00:07:13,930 --> 00:07:19,210
+Speaker 1: If you submit a zip that looks like, that looks like something that looks like submission. 
+
+52
+00:07:19,210 --> 00:07:20,930
+Speaker 1: And if so, you get a lot of. 
+
+53
+00:07:21,970 --> 00:07:28,810
+Speaker 1: So yeah, like these are some examples, like I might give you some sort of like, why is this phone gonna fail or something. 
+
+54
+00:07:28,930 --> 00:07:30,610
+Speaker 1: This is something that you might need to know. 
+
+55
+00:07:30,930 --> 00:07:36,010
+Speaker 1: So if you're going to like give me some of the time, you can return in the empty zip that like doing your own list. 
+
+56
+00:07:36,520 --> 00:07:51,920
+Speaker 1: I don't care if you like do the later, you can always come to like, you can always just turn in something, do it later, like, and then like you'll come and ask me what I'm talking about. 
+
+57
+00:07:51,920 --> 00:07:56,800
+Speaker 1: And there are some late days also. I think like in practice, those you should actually.
+
+58
+00:08:01,870 --> 00:08:06,030
+Speaker 1: Okay, now for the exam, you guys have a front and back. 
+
+59
+00:08:06,030 --> 00:08:11,030
+Speaker 1: It's on paper only, like no iPad, like there are the iPad notes. 
+
+60
+00:08:11,950 --> 00:08:16,510
+Speaker 1: I don't know if you guys know, but like, do you guys know what like nano banana are like touching teams are? 
+
+61
+00:08:17,110 --> 00:08:18,590
+Speaker 1: Yes, this is actually really cool. 
+
+62
+00:08:18,590 --> 00:08:21,710
+Speaker 1: We generate this from scratch perfectly. 
+
+63
+00:08:22,350 --> 00:08:27,630
+Speaker 1: So there is no, yeah, I actually tried this once and it worked really well. So. 
+
+64
+00:08:30,080 --> 00:08:35,960
+Speaker 1: If you can't like use the iPad notes or whatever, since we have no way of knowing that. 
+
+65
+00:08:36,680 --> 00:08:53,360
+Speaker 1: And so therefore we're just gonna do like this is something and but to be honest, the questions are really like, you should be able to take these like after I release the, after we release the.
+
+66
+00:08:54,060 --> 00:08:59,500
+Speaker 1: Then when I took the course a few years ago, I remember like half of the people showed up to be there without changing. 
+
+67
+00:08:59,860 --> 00:09:01,020
+Speaker 1: Like it's like really easy. 
+
+68
+00:09:01,660 --> 00:09:02,380
+Speaker 1: No one should be. 
+
+69
+00:09:02,620 --> 00:09:09,100
+Speaker 1: If you get less than 100% on the exam, it's probably because like either didn't like make it cheap. 
+
+70
+00:09:09,180 --> 00:09:11,180
+Speaker 1: It's like ridiculously easy questions. 
+
+71
+00:09:11,780 --> 00:09:14,380
+Speaker 1: We're only gonna be there because we're probably forced to do this. 
+
+72
+00:09:14,750 --> 00:09:17,110
+Speaker 1: So no one should be getting a bad grade on it. 
+
+73
+00:09:20,030 --> 00:09:24,550
+Speaker 1: And also to incentivize people to come to discussion, I'm going to put questions for discussion. 
+
+74
+00:09:26,630 --> 00:09:34,990
+Speaker 1: And yeah, that's pretty much it. And then for the project. 
+
+75
+00:09:37,650 --> 00:09:50,410
+Speaker 1: Are there any questions about these things? 
+
+76
+00:09:50,410 --> 00:09:58,490
+Speaker 1: Yeah, actually, it's like this library of Python calls, which it uses Python syntax. 
+
+77
+00:09:58,920 --> 00:10:03,720
+Speaker 1: But then afterwards, everything else is like, it's almost like it's own language.
+
+78
+00:10:20,070 --> 00:10:22,430
+Speaker 1: I do that a lot, so I might keep that. 
+
+79
+00:10:22,630 --> 00:10:24,630
+Speaker 1: There are really easy ways to get free money. 
+
+80
+00:10:28,790 --> 00:10:33,270
+Speaker 1: So each of your team members signs up for free trial for the project or something. 
+
+81
+00:10:33,270 --> 00:10:40,350
+Speaker 1: You should have that. Yeah. Oh, yeah. And for the homework, it's like.
+
+82
+00:10:51,540 --> 00:10:59,980
+Speaker 1: Okay, so the project is basically like show what you learn from the. 
+
+83
+00:11:00,200 --> 00:11:11,720
+Speaker 1: Anything kind of as long as you made, as long as like related to the course has something to do with it is anything goes like ideally like no LMS or something like that. 
+
+84
+00:11:11,880 --> 00:11:21,040
+Speaker 1: Like no, like, oh, we want to like under stock prediction or we want to like, we want to, you know, understand how to make a chatbot like that is your. 
+
+85
+00:11:21,610 --> 00:11:24,090
+Speaker 1: And I'll pick stuff, but this is a computer vision. 
+
+86
+00:11:24,650 --> 00:11:27,090
+Speaker 1: There has to be some like vision based component. 
+
+87
+00:11:27,450 --> 00:11:37,490
+Speaker 1: But aside from that, it's completely the only other kind of thing you can't do is you can't really can't do something that basically is not possible. 
+
+88
+00:11:38,490 --> 00:11:41,450
+Speaker 1: Like for example, one thing that's in the homework was like. 
+
+89
+00:11:41,830 --> 00:11:48,990
+Speaker 1: We have, we basically train a model to classify between like dog, cat, car, etc. 
+
+90
+00:11:49,590 --> 00:12:02,590
+Speaker 1: So we just change it to classify between like, I don't know, plant, bird or something else that's not really interesting and change it to different things. 
+
+91
+00:12:02,960 --> 00:12:08,600
+Speaker 1: Which is not really, you know, so instead it has to go like incrementally beyond the home. 
+
+92
+00:12:08,600 --> 00:12:22,560
+Speaker 1: Because I mean, if we teach you how to generate images from scratch, which is one of the home, and maybe you can, you know, extend that a little bit to, you know, oh, given an image will colorize these things like given a grayscale image will colorize these things. 
+
+93
+00:12:23,190 --> 00:12:32,350
+Speaker 1: Or, oh, like we'll predict instead of like possible instances in this, a dog or cat, where in the image is the dog or cat and all this is covered in the lecture. 
+
+94
+00:12:32,910 --> 00:12:34,710
+Speaker 1: It's just there's no homework assignment. 
+
+95
+00:12:34,710 --> 00:12:42,870
+Speaker 1: Does that make sense? And of course, anything. Yeah, actually. 
+
+96
+00:12:43,790 --> 00:12:52,110
+Speaker 1: So you basically submit a project proposal, like I'm input some date, but I don't know exactly what it is like or something like that. 
+
+97
+00:12:52,710 --> 00:13:00,190
+Speaker 1: But basically you have to submit the proposal, which is like a small like written thing about like, what's the point? 
+
+98
+00:13:00,750 --> 00:13:07,270
+Speaker 1: And you basically like, it's basically like yes or no. That's all like, I don't know if it's like.
+
+99
+00:13:17,350 --> 00:13:29,070
+Speaker 1: So, easiest way to get a 100% on this is to like run your idea by me, like during office hours or like if we have free time before. 
+
+100
+00:13:31,120 --> 00:13:44,680
+Speaker 1: But other than that, it's just kind of like a lot of the stuff for the project is like what how I feel like and to make it a bit more fair, basically any like information you need about what grade am I gonna get about this? 
+
+101
+00:13:45,120 --> 00:13:46,720
+Speaker 1: What grade am I gonna get with this part? 
+
+102
+00:13:46,880 --> 00:13:51,080
+Speaker 1: You ask me in office hours, I'll like look at it then and basically like help.
+
+103
+00:13:51,410 --> 00:13:53,530
+Speaker 1: Not like, oh, I turned something in. 
+
+104
+00:13:53,570 --> 00:13:54,130
+Speaker 1: I didn't know. 
+
+105
+00:13:54,130 --> 00:13:55,410
+Speaker 1: This is part of the requirements. 
+
+106
+00:13:55,890 --> 00:13:59,970
+Speaker 1: And then I get like an 80% or something to that effect. 
+
+107
+00:14:00,240 --> 00:14:01,960
+Speaker 1: So I don't do it. 
+
+108
+00:14:02,000 --> 00:14:10,640
+Speaker 1: Like, I don't like even I did this, but like, don't do this like the night before the deadline and then just turn it and be like, oh, well, I didn't know I was I have to write like that. 
+
+109
+00:14:10,640 --> 00:14:15,680
+Speaker 1: The latest ones, like, sorry, like, I can't help with that.
+
+110
+00:14:18,600 --> 00:14:22,280
+Speaker 1: Yeah, anything for the homework? Generally, like, I'm not really. 
+
+111
+00:14:23,080 --> 00:14:23,360
+Speaker 1: Matter. 
+
+112
+00:14:23,640 --> 00:14:26,680
+Speaker 1: But for the project, you can use like whatever you want. 
+
+113
+00:14:26,760 --> 00:14:30,120
+Speaker 1: Like you can use codex, plot, etc. 
+
+114
+00:14:30,840 --> 00:14:37,360
+Speaker 1: But it matters that you like, 1, made an effort to create something marginally beyond the homework. 
+
+115
+00:14:37,960 --> 00:14:41,760
+Speaker 1: And 2, it matters that like, you actually understand it. 
+
+116
+00:14:41,800 --> 00:14:45,760
+Speaker 1: And I'll go over just like later a little bit, but we're gonna make sure we got.
+
+117
+00:14:48,010 --> 00:14:59,810
+Speaker 1: Because I feel like now, like I can like 15 minutes, like actually like in 15 minutes I can have like my project ready and ready. 
+
+118
+00:15:00,330 --> 00:15:07,050
+Speaker 1: Like it's not really like hard in terms of like executing the project anymore. So they're gonna place the bar on like. 
+
+119
+00:15:07,440 --> 00:15:09,800
+Speaker 1: Do you understand what I'm trying to say? 
+
+120
+00:15:10,480 --> 00:15:16,040
+Speaker 1: And if it's too hard to get, like, technically you're bound to your book. 
+
+121
+00:15:16,040 --> 00:15:19,440
+Speaker 1: If you don't talk to me, you'll be bound to your book. 
+
+122
+00:15:19,720 --> 00:15:27,360
+Speaker 1: But if your project isn't working or your project isn't like, not as you don't like it or something, but it without a problem.
+
+123
+00:15:36,740 --> 00:15:46,580
+Speaker 1: Okay, so actually at the very end, submit like a four page report on like, it's like a four page report. 
+
+124
+00:15:46,660 --> 00:15:49,140
+Speaker 1: Like these are all the sections that go into the. 
+
+125
+00:15:50,210 --> 00:15:54,850
+Speaker 1: Have anyone like read CPR paper here before or like I for something. 
+
+126
+00:15:55,770 --> 00:16:00,650
+Speaker 1: Okay, so like this is basically the format that like all of the machine learning. 
+
+127
+00:16:01,730 --> 00:16:03,130
+Speaker 1: So you guys are just gonna do that. 
+
+128
+00:16:03,130 --> 00:16:05,530
+Speaker 1: But I like a sponsor. 
+
+129
+00:16:05,530 --> 00:16:10,130
+Speaker 1: So it's just like, like, yeah, it's just like a report. 
+
+130
+00:16:10,170 --> 00:16:12,570
+Speaker 1: Like this is what all of the graduate level class. 
+
+131
+00:16:13,450 --> 00:16:22,770
+Speaker 1: And what else? 
+
+132
+00:16:24,050 --> 00:16:32,050
+Speaker 1: So I mentioned this a little bit, but I feel really bad for people who like have, you know, you like make a group and everything and like there's no one like. 
+
+133
+00:16:32,550 --> 00:16:35,950
+Speaker 1: You guys like fill out the form for the group and then your teammates just like don't show up.
+
+134
+00:16:36,790 --> 00:16:47,310
+Speaker 1: So to finalize this, basically what I'm gonna do is your, your both your proposal and your project are due before the meeting and make sure the final respect. 
+
+135
+00:16:48,030 --> 00:16:54,230
+Speaker 1: And so what I'm gonna do is I'm gonna like skim through your skim through what you turn in and like write this. 
+
+136
+00:16:56,440 --> 00:16:58,280
+Speaker 1: They're going to be like ridiculously easy.
+
+137
+00:16:58,280 --> 00:17:00,640
+Speaker 1: Like I'm coming up with these at the stand of the time. 
+
+138
+00:17:01,240 --> 00:17:03,680
+Speaker 1: So they're not gonna be like hard at all. 
+
+139
+00:17:04,600 --> 00:17:10,200
+Speaker 1: They're mainly there to like give this person the water for your project or whatever. 
+
+140
+00:17:10,200 --> 00:17:16,320
+Speaker 1: But they like they have a vague understanding, like for context, like I just can't do the project. 
+
+141
+00:17:17,330 --> 00:17:28,170
+Speaker 1: But if you do your project on like ChatGPT or something, then like your project is going to be like, I have one of the questions literally like, what does the GPT, ChatGPT step? 
+
+142
+00:17:28,570 --> 00:17:31,010
+Speaker 1: I feel like that's a pretty like fair question. 
+
+143
+00:17:31,130 --> 00:17:32,370
+Speaker 1: If you like write about that. 
+
+144
+00:17:33,130 --> 00:17:33,810
+Speaker 1: That's another thing. 
+
+145
+00:17:33,850 --> 00:17:37,530
+Speaker 1: I'm gonna design these questions based on what you wrote in the report. 
+
+146
+00:17:37,850 --> 00:17:41,930
+Speaker 1: So it's, I feel like it's perfectly fair to bring out this and take out whatever.
+
+147
+00:17:44,530 --> 00:17:44,890
+Speaker 1: Okay. 
+
+148
+00:17:46,250 --> 00:17:58,610
+Speaker 1: And another thing, I don't know if I mentioned this, but I don't think I wrote this down, but it's really more true than you guys do. 
+
+149
+00:17:58,630 --> 00:18:03,030
+Speaker 1: You start training from scratch in your project. 
+
+150
+00:18:03,070 --> 00:18:06,750
+Speaker 1: Like you can just download someone else's model, run it and get some data. 
+
+151
+00:18:07,110 --> 00:18:13,190
+Speaker 1: Okay, you have to like start with some random model and then like eventually get some data set. 
+
+152
+00:18:17,150 --> 00:18:22,870
+Speaker 1: Yeah, yeah, anything is basically there as long as you can like find it and make it work. 
+
+153
+00:18:23,310 --> 00:18:24,350
+Speaker 1: It's important. 
+
+154
+00:18:24,510 --> 00:18:32,910
+Speaker 1: I wouldn't like, for example, like in this case, it's a very big data set, but there's no way with the resources you guys have, you're gonna be able to get any sort of like result. 
+
+155
+00:18:32,910 --> 00:18:37,070
+Speaker 1: It's just, I don't even know if the collab has enough that sort of.
+
+156
+00:18:39,940 --> 00:18:51,180
+Speaker 1: And then same thing with this AI is like, okay, for the implementation, I don't know what's going on, but when you turn in your like budget reports to me, I don't want like, it's all doing a lot of stuff. 
+
+157
+00:18:51,620 --> 00:18:53,460
+Speaker 1: So please like write that by hand. 
+
+158
+00:18:54,020 --> 00:18:59,860
+Speaker 1: And a lot of the times what I've noticed is that AI is like, if you write something with AI. 
+
+159
+00:19:00,000 --> 00:19:01,000
+Speaker 1: A sentence makes a sense. 
+
+160
+00:19:01,160 --> 00:19:08,160
+Speaker 1: I was reviewing a paper yesterday and I like, I literally couldn't tell what half of the sentences was saying. 
+
+161
+00:19:08,360 --> 00:19:13,160
+Speaker 1: They just like streamed on like long like pauses that like were definitely like written by AI. 
+
+162
+00:19:13,440 --> 00:19:18,960
+Speaker 1: So if you do something like that, I'm gonna ask you what that means. 
+
+163
+00:19:19,000 --> 00:19:21,920
+Speaker 1: It's fine if you're like report is like badly written or something like. 
+
+164
+00:19:22,230 --> 00:19:41,430
+Speaker 1: I forgive, forgiving of that, but like, like, actually, like, I don't care at all if you're like, if it's like brush out like. 
+
+165
+00:19:43,320 --> 00:19:56,800
+Speaker 1: Much better to turn in the two and a half minutes. 
+
+166
+00:19:56,800 --> 00:19:57,880
+Speaker 1: You'll probably get like 90% of that instead of getting more. 
+
+167
+00:19:57,880 --> 00:20:02,840
+Speaker 1: Okay, and this is the QR code for office hours are.
+
+168
+00:20:03,300 --> 00:20:13,580
+Speaker 1: Now, I guess any questions so far? 
+
+169
+00:20:13,580 --> 00:20:19,860
+Speaker 1: So for the project groups, are we picking our own groups? 
+
+170
+00:20:19,860 --> 00:20:20,860
+Speaker 1: Yeah, yeah, you pick your own. 
+
+171
+00:20:20,940 --> 00:20:25,060
+Speaker 1: As long as it's, it has to be three or four people. There are no exceptions. 
+
+172
+00:20:25,060 --> 00:20:29,420
+Speaker 1: No five people, no two people, and definitely no individual parties. 
+
+173
+00:20:29,420 --> 00:20:32,500
+Speaker 1: I don't think it doesn't matter if you can do it on your own or something. 
+
+174
+00:20:32,500 --> 00:20:33,620
+Speaker 1: The whole point of this. 
+
+175
+00:20:33,740 --> 00:20:39,340
+Speaker 1: But other than that, you, whatever. Yeah. Any more questions? Yes.
+
+176
+00:20:50,590 --> 00:20:53,470
+Speaker 1: So I'm assuming you have like whatever is available. 
+
+177
+00:20:54,590 --> 00:21:02,390
+Speaker 1: If you get more, actually, like if you're in like, I don't know, like you have chance class or something and you have access to this group and you run the project on that. 
+
+178
+00:21:02,670 --> 00:21:09,190
+Speaker 1: But some of you might be like grad students and you like have like you're doing something related to your like research project. 
+
+179
+00:21:09,600 --> 00:21:10,160
+Speaker 1: That's fine. 
+
+180
+00:21:10,240 --> 00:21:13,080
+Speaker 1: As long as in the report, you'll need to like write down your method. 
+
+181
+00:21:13,320 --> 00:21:15,800
+Speaker 1: And so you need to write down like what did I actually do? 
+
+182
+00:21:15,880 --> 00:21:23,320
+Speaker 1: And if I write what I can do, but I'm like, I don't really grade it based on, you know, how impressive is the result. 
+
+183
+00:21:23,480 --> 00:21:27,800
+Speaker 1: Like I grade it based on, you know, really how much does it feel like this person understands.
+
+184
+00:21:58,400 --> 00:21:59,560
+Speaker 1: Oh, I did a jungle. 
+
+185
+00:21:59,560 --> 00:22:01,520
+Speaker 1: I explicitly play Lilia. 
+
+186
+00:22:01,520 --> 00:22:03,880
+Speaker 1: Oh, oh, what is this? 
+
+187
+00:22:07,800 --> 00:22:20,920
+Speaker 1: Actually, someone wants to try one interesting project could be something that does a model that just like you can pretty much just wait for OpenAI did this for Dodo a while back. So.
+
+188
+00:22:34,750 --> 00:22:37,430
+Speaker 1: Yeah, I don't know. 
+
+189
+00:22:37,430 --> 00:22:53,230
+Speaker 1: But so there are a lot of these like small companies, like I forget their name, basically, there are a lot of small companies that like they sell like $200. 
+
+190
+00:22:54,550 --> 00:23:08,390
+Speaker 1: So if you have four project numbers, like 12 dollars, and you can just like rotate these companies like, but I don't know AWS specifically does it, but I couldn't, but you really shouldn't need it. 
+
+191
+00:23:08,470 --> 00:23:16,390
+Speaker 1: Like every, there's like a full life version and everything should be able to drive. Like anything more than that, you like really don't.
+
+192
+00:23:23,860 --> 00:23:24,180
+Speaker 1: Yes. 
+
+193
+00:23:25,140 --> 00:23:28,580
+Speaker 1: How far into the border are we going to be forming groups? 
+
+194
+00:23:29,500 --> 00:23:38,180
+Speaker 1: I mean, you guys should be like, ideally you should form groups like today or tomorrow or something, but I'm not checking to see like what your group is like locked in whatever the. 
+
+195
+00:23:40,030 --> 00:23:42,990
+Speaker 1: But before that, just like start forming them now.
+
+196
+00:23:43,030 --> 00:23:45,390
+Speaker 1: Cuz this happened to me once. 
+
+197
+00:23:45,510 --> 00:23:51,630
+Speaker 1: I like procrastinated on forming a group cuz I didn't know anyone in class and then I got stuck with these two bucks like this. 
+
+198
+00:23:54,910 --> 00:23:55,510
+Speaker 1: Don't do that. 
+
+199
+00:23:56,310 --> 00:23:59,870
+Speaker 1: Also, if anyone, if someone's like really slacking in your group, you can tell. 
+
+200
+00:24:00,130 --> 00:24:02,610
+Speaker 1: As and then I'll like her. 
+
+201
+00:24:02,810 --> 00:24:10,490
+Speaker 1: So like, or I'll resolve the problem if they aren't getting, then I'll.
+
+202
+00:24:10,490 --> 00:24:18,170
+Speaker 1: So this is like, I really don't like what the point is, the main point of this. Everything else is the homework and the exam. 
+
+203
+00:24:21,830 --> 00:24:25,630
+Speaker 1: So I really care about, you know, everyone trying their best effort. 
+
+204
+00:24:26,790 --> 00:24:33,310
+Speaker 1: And in fact, like with the exam, the homework and the exam, I'm like pretty flexible. 
+
+205
+00:24:33,350 --> 00:24:42,950
+Speaker 1: Like if you like if you fail the exam, like if enough people like fail the exam, they're definitely gonna get hurt by the way. 
+
+206
+00:24:43,250 --> 00:24:56,970
+Speaker 1: And like, if you, like once I forgot to do an exam, like I'll let you like, I'll let you like, so like these exam and homework are like, should be easy, right? Easy points for everyone. Okay. Anything else? 
+
+207
+00:25:01,060 --> 00:25:03,420
+Speaker 1: Okay, I don't see any more questions. 
+
+208
+00:25:07,620 --> 00:25:14,780
+Speaker 1: I work on like, I work on vision specifically like vision for like, can we predict the future? 
+
+209
+00:25:15,220 --> 00:25:21,940
+Speaker 1: Like right now, the thing that we do in robotics is like, first we do the vision and then the robot after that.
+
+210
+00:25:57,180 --> 00:26:03,500
+Speaker 1: Give this discussion. Okay, I like, yeah, let's just review.
