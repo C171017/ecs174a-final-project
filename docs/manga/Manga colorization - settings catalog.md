@@ -12,6 +12,9 @@ The channel widths, kernels and ReLU are documented plans. L1 is the suggested f
 
 Machine-readable companion: [manga-settings-catalog.json](manga-settings-catalog.json). Stable setting keys, types, proposed values, status, constraints and effects are included. `implemented: false` means this catalog alone does not implement a training control. Null means unset/inactive, not an arbitrary zero.
 
+
+Full-run stopping policy: [validation early stopping, patience five, checkpoint selection and RunPod shutdown responsibilities](training-stopping-policy.md). This approved policy supersedes the historical disabled early-stopping proposal below; enforcement still requires implementation.
+
 ## First dashboard view
 
 Initially expose: convolution count and hidden channels, kernel size, hidden/output activation, input size policy, batch size, loss, optimizer, learning rate and training duration. Show the source revision and split manifest alongside those controls. Put other controls under Advanced; disable future features until supported. Show loss and fixed validation examples alongside run settings.
