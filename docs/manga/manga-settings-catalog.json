@@ -1,0 +1,1044 @@
+{
+  "schema_version": 1,
+  "purpose": "future_dashboard_reference_not_executable_training_config",
+  "source_date": "2026-11-05",
+  "settings": [
+    {
+      "key": "model.family",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "tiny_cnn",
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "tiny_cnn; later: unet, pretrained_encoder_decoder",
+      "effect": "Model family; changing family changes the experiment, not just one layer.",
+      "implemented": false
+    },
+    {
+      "key": "model.channels",
+      "category": "Architecture",
+      "type": "integer[]",
+      "default": [
+        1,
+        16,
+        16,
+        3
+      ],
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "[1,8,8,3]; [1,16,16,3]; [1,32,32,3]",
+      "effect": "Hidden widths control feature capacity, memory and compute. Input/output remain 1/3 for the RGB baseline.",
+      "implemented": false
+    },
+    {
+      "key": "model.kernel_sizes",
+      "category": "Architecture",
+      "type": "integer[]",
+      "default": [
+        3,
+        3,
+        3
+      ],
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "odd positive sizes, one per convolution",
+      "effect": "Spatial filter width/height. Larger filters see a wider neighborhood and cost more compute.",
+      "implemented": false
+    },
+    {
+      "key": "model.strides",
+      "category": "Architecture",
+      "type": "integer[]",
+      "default": [
+        1,
+        1,
+        1
+      ],
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "positive integers, one per convolution",
+      "effect": "Step size; values above 1 shrink feature maps and require an explicit reconstruction design.",
+      "implemented": false
+    },
+    {
+      "key": "model.padding",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "same",
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "same; valid; explicit per-layer values",
+      "effect": "Controls border handling and spatial dimensions. Same with stride 1 preserves height/width.",
+      "implemented": false
+    },
+    {
+      "key": "model.padding_mode",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "zeros",
+      "status": "proposed_default",
+      "choices_or_constraints": "zeros; reflect; replicate",
+      "effect": "How boundary pixels are extended; can change edge artifacts.",
+      "implemented": false
+    },
+    {
+      "key": "model.dilations",
+      "category": "Architecture",
+      "type": "integer[]",
+      "default": [
+        1,
+        1,
+        1
+      ],
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "positive integers, one per convolution",
+      "effect": "Spaces out filter samples, enlarging receptive field without adding filter weights.",
+      "implemented": false
+    },
+    {
+      "key": "model.groups",
+      "category": "Architecture",
+      "type": "integer[]",
+      "default": [
+        1,
+        1,
+        1
+      ],
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "divisors of both input and output channels",
+      "effect": "Grouped/depthwise connections reduce channel mixing; validate every layer.",
+      "implemented": false
+    },
+    {
+      "key": "model.bias",
+      "category": "Architecture",
+      "type": "boolean",
+      "default": true,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false",
+      "effect": "Adds one learned offset per output channel.",
+      "implemented": false
+    },
+    {
+      "key": "model.hidden_activation",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "relu",
+      "status": "documented_architecture_plan",
+      "choices_or_constraints": "relu; leaky_relu; gelu; silu; identity",
+      "effect": "Nonlinearity between convolutions; changes optimization and representable functions.",
+      "implemented": false
+    },
+    {
+      "key": "model.negative_slope",
+      "category": "Architecture",
+      "type": "float",
+      "default": 0.01,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative; only with leaky_relu",
+      "effect": "Slope on negative inputs.",
+      "implemented": false
+    },
+    {
+      "key": "model.output_activation",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "identity",
+      "status": "proposed_default",
+      "choices_or_constraints": "identity; sigmoid; tanh",
+      "effect": "Output range: unrestricted, [0,1], or [-1,1]. Must agree with target scaling.",
+      "implemented": false
+    },
+    {
+      "key": "model.normalization",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "none",
+      "status": "proposed_default",
+      "choices_or_constraints": "none; batch; instance; group",
+      "effect": "Feature normalization changes optimization and sometimes color/contrast. Each type needs its own settings.",
+      "implemented": false
+    },
+    {
+      "key": "model.norm_groups",
+      "category": "Architecture",
+      "type": "integer",
+      "default": 4,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive divisor of hidden channels; only with group norm",
+      "effect": "Number of groups for group normalization.",
+      "implemented": false
+    },
+    {
+      "key": "model.norm_epsilon",
+      "category": "Architecture",
+      "type": "float",
+      "default": 1e-05,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; only with normalization",
+      "effect": "Numerical stability constant.",
+      "implemented": false
+    },
+    {
+      "key": "model.dropout",
+      "category": "Architecture",
+      "type": "float",
+      "default": 0.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "0 <= p < 1",
+      "effect": "Randomly suppresses features during training; regularization, disabled for evaluation.",
+      "implemented": false
+    },
+    {
+      "key": "model.initialization",
+      "category": "Architecture",
+      "type": "enum",
+      "default": "framework_default",
+      "status": "proposed_default",
+      "choices_or_constraints": "framework_default; kaiming; xavier",
+      "effect": "How learned weights start; appropriate choices depend on activation.",
+      "implemented": false
+    },
+    {
+      "key": "data.revision",
+      "category": "Data and preprocessing",
+      "type": "string",
+      "default": "a4f5be088cc1c47460f0bc07cafe8328e4ac8897",
+      "status": "verified_source",
+      "choices_or_constraints": "pinned source revision",
+      "effect": "Locks source identity for reproducible comparisons.",
+      "implemented": false
+    },
+    {
+      "key": "data.split_manifest",
+      "category": "Data and preprocessing",
+      "type": "path",
+      "default": null,
+      "status": "required_unset",
+      "choices_or_constraints": "required before a real training run",
+      "effect": "Versioned train/validation/test membership. Do not change held-out sets between comparable runs.",
+      "implemented": false
+    },
+    {
+      "key": "data.input_kind",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "desaturated_manga",
+      "status": "proposed_default",
+      "choices_or_constraints": "desaturated_manga; original_bw",
+      "effect": "Different input tasks; retain separate evaluation tracks.",
+      "implemented": false
+    },
+    {
+      "key": "data.color_space",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "rgb",
+      "status": "proposed_default",
+      "choices_or_constraints": "rgb; later: lab_chroma",
+      "effect": "RGB baseline predicts three intensities. Lab chroma requires a different output/target pipeline.",
+      "implemented": false
+    },
+    {
+      "key": "data.scaling",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "zero_one",
+      "status": "proposed_default",
+      "choices_or_constraints": "zero_one; minus_one_one",
+      "effect": "Pixel numeric range; coordinate with output activation and metric reporting.",
+      "implemented": false
+    },
+    {
+      "key": "data.spatial_mode",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "native",
+      "status": "proposed_default",
+      "choices_or_constraints": "native; resize; crop; pad",
+      "effect": "Native preserves stored geometry; resizing trades detail for compute; crops trade context for detail.",
+      "implemented": false
+    },
+    {
+      "key": "data.resize_hw",
+      "category": "Data and preprocessing",
+      "type": "integer[2]",
+      "default": [
+        256,
+        256
+      ],
+      "status": "proposed_default",
+      "choices_or_constraints": "positive height/width; only with resize",
+      "effect": "Target resolution. Avoid unintended aspect distortion.",
+      "implemented": false
+    },
+    {
+      "key": "data.resize_policy",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "fit_pad",
+      "status": "proposed_default",
+      "choices_or_constraints": "fit_pad; stretch; cover_crop",
+      "effect": "Explicit aspect-ratio policy, active when resizing.",
+      "implemented": false
+    },
+    {
+      "key": "data.interpolation",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "bilinear",
+      "status": "proposed_default",
+      "choices_or_constraints": "nearest; bilinear; bicubic; area",
+      "effect": "Resampling rule; affects fine ink and text. Apply consistent paired geometry.",
+      "implemented": false
+    },
+    {
+      "key": "data.antialias",
+      "category": "Data and preprocessing",
+      "type": "boolean",
+      "default": true,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false; only for supported resize methods",
+      "effect": "Controls aliasing during downsampling.",
+      "implemented": false
+    },
+    {
+      "key": "data.crop_hw",
+      "category": "Data and preprocessing",
+      "type": "integer[2]",
+      "default": [
+        256,
+        256
+      ],
+      "status": "proposed_default",
+      "choices_or_constraints": "positive height/width; only with crop",
+      "effect": "Shared input/target crop size.",
+      "implemented": false
+    },
+    {
+      "key": "data.crop_selection",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "random",
+      "status": "proposed_default",
+      "choices_or_constraints": "random; center; grid",
+      "effect": "Training patch selection. Validation must use a fixed documented evaluation procedure.",
+      "implemented": false
+    },
+    {
+      "key": "data.horizontal_flip",
+      "category": "Data and preprocessing",
+      "type": "float",
+      "default": 0.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "probability 0\u20131; training only",
+      "effect": "Paired geometric augmentation; flips lettering too.",
+      "implemented": false
+    },
+    {
+      "key": "data.rotation_degrees",
+      "category": "Data and preprocessing",
+      "type": "float",
+      "default": 0.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative maximum magnitude; training only",
+      "effect": "Paired rotation; document interpolation/fill and effects on text.",
+      "implemented": false
+    },
+    {
+      "key": "data.title_sampling",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "natural",
+      "status": "proposed_default",
+      "choices_or_constraints": "natural; uniform_titles; capped_titles",
+      "effect": "Natural sampling is dominated by Hunter X Hunter; alternatives rebalance training exposure.",
+      "implemented": false
+    },
+    {
+      "key": "data.per_title_cap",
+      "category": "Data and preprocessing",
+      "type": "integer",
+      "default": 200,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; only with capped_titles",
+      "effect": "Limits training examples from each title; not a cap on evaluation sets.",
+      "implemented": false
+    },
+    {
+      "key": "data.monochrome_target_policy",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "keep",
+      "status": "proposed_default",
+      "choices_or_constraints": "keep; flag; exclude_from_training",
+      "effect": "How to handle colorless targets; freeze rules without tuning to test performance.",
+      "implemented": false
+    },
+    {
+      "key": "data.shuffle",
+      "category": "Data and preprocessing",
+      "type": "boolean",
+      "default": true,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false; training only",
+      "effect": "Changes order each epoch; keep input/target paired.",
+      "implemented": false
+    },
+    {
+      "key": "data.batch_size",
+      "category": "Data and preprocessing",
+      "type": "integer",
+      "default": 2,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; memory dependent",
+      "effect": "Examples per forward/backward pass; affects memory and gradient noise.",
+      "implemented": false
+    },
+    {
+      "key": "data.workers",
+      "category": "Data and preprocessing",
+      "type": "integer",
+      "default": 2,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative",
+      "effect": "Parallel loading workers; affects throughput and reproducibility.",
+      "implemented": false
+    },
+    {
+      "key": "data.prefetch_batches",
+      "category": "Data and preprocessing",
+      "type": "integer",
+      "default": 2,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; only when worker loading supports it",
+      "effect": "Batches prepared ahead; trades RAM for throughput.",
+      "implemented": false
+    },
+    {
+      "key": "data.pin_memory",
+      "category": "Data and preprocessing",
+      "type": "boolean",
+      "default": true,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false; CUDA dependent",
+      "effect": "Can speed CPU-to-GPU transfers.",
+      "implemented": false
+    },
+    {
+      "key": "data.drop_last",
+      "category": "Data and preprocessing",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false; training only",
+      "effect": "Whether to discard an incomplete final batch; never silently drop evaluation rows.",
+      "implemented": false
+    },
+    {
+      "key": "data.cache",
+      "category": "Data and preprocessing",
+      "type": "enum",
+      "default": "none",
+      "status": "proposed_default",
+      "choices_or_constraints": "none; memory; local_disk",
+      "effect": "Loading performance setting; never duplicate the full dataset without checking space.",
+      "implemented": false
+    },
+    {
+      "key": "loss.kind",
+      "category": "Loss",
+      "type": "enum",
+      "default": "l1",
+      "status": "proposed_default",
+      "choices_or_constraints": "l1; mse; smooth_l1",
+      "effect": "L1 averages absolute RGB errors; MSE squares them; Smooth L1 combines regimes. Cross-entropy is not appropriate for this continuous RGB baseline.",
+      "implemented": false
+    },
+    {
+      "key": "loss.reduction",
+      "category": "Loss",
+      "type": "enum",
+      "default": "mean",
+      "status": "proposed_default",
+      "choices_or_constraints": "mean; sum",
+      "effect": "Mean keeps scale more comparable across image/batch sizes. Sum changes gradient scale with element count.",
+      "implemented": false
+    },
+    {
+      "key": "loss.smooth_l1_beta",
+      "category": "Loss",
+      "type": "float",
+      "default": 1.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; only with smooth_l1",
+      "effect": "Transition threshold, interpreted in the chosen pixel scale.",
+      "implemented": false
+    },
+    {
+      "key": "loss.channel_weights",
+      "category": "Loss",
+      "type": "float[3]",
+      "default": [
+        1,
+        1,
+        1
+      ],
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative, not all zero",
+      "effect": "Relative RGB contributions; normalize weighted mean explicitly.",
+      "implemented": false
+    },
+    {
+      "key": "loss.reconstruction_weight",
+      "category": "Loss",
+      "type": "float",
+      "default": 1.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative",
+      "effect": "Weight of the pixel reconstruction term in any composite loss.",
+      "implemented": false
+    },
+    {
+      "key": "loss.edge_weight",
+      "category": "Loss",
+      "type": "float",
+      "default": 0.0,
+      "status": "future_extension",
+      "choices_or_constraints": "nonnegative; later extension",
+      "effect": "Weight of a separately defined differentiable edge term. Needs exact operator and boundary rules.",
+      "implemented": false
+    },
+    {
+      "key": "loss.mask_mode",
+      "category": "Loss",
+      "type": "enum",
+      "default": "none",
+      "status": "future_extension",
+      "choices_or_constraints": "none; later: preserve_region, color_region",
+      "effect": "Requires checked masks; specify whether mask weights loss, guides input, or composites output.",
+      "implemented": false
+    },
+    {
+      "key": "loss.mask_weight",
+      "category": "Loss",
+      "type": "float",
+      "default": 1.0,
+      "status": "future_extension",
+      "choices_or_constraints": "nonnegative; only with a mask loss",
+      "effect": "Relative weight for selected regions; normalize by valid weighted pixel count.",
+      "implemented": false
+    },
+    {
+      "key": "loss.perceptual_weight",
+      "category": "Loss",
+      "type": "float",
+      "default": 0.0,
+      "status": "future_extension",
+      "choices_or_constraints": "nonnegative; later extension",
+      "effect": "Requires a specified feature network, layers and preprocessing; adds compute.",
+      "implemented": false
+    },
+    {
+      "key": "loss.adversarial_weight",
+      "category": "Loss",
+      "type": "float",
+      "default": 0.0,
+      "status": "future_extension",
+      "choices_or_constraints": "nonnegative; later extension",
+      "effect": "Requires discriminator and separate optimizer/update configuration; not a tiny-CNN requirement.",
+      "implemented": false
+    },
+    {
+      "key": "optim.name",
+      "category": "Optimization and stopping",
+      "type": "enum",
+      "default": "adam",
+      "status": "proposed_default",
+      "choices_or_constraints": "adam; adamw; sgd",
+      "effect": "Rule used to update learned weights.",
+      "implemented": false
+    },
+    {
+      "key": "optim.learning_rate",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 0.001,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; example sweep 0.0001, 0.0003, 0.001",
+      "effect": "Step size; too high can destabilize learning, too low can slow it.",
+      "implemented": false
+    },
+    {
+      "key": "optim.weight_decay",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 0.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative",
+      "effect": "Regularization; Adam L2 and AdamW decoupled decay have different meanings.",
+      "implemented": false
+    },
+    {
+      "key": "optim.betas",
+      "category": "Optimization and stopping",
+      "type": "float[2]",
+      "default": [
+        0.9,
+        0.999
+      ],
+      "status": "proposed_default",
+      "choices_or_constraints": "each in [0,1); Adam/AdamW only",
+      "effect": "Gradient and squared-gradient smoothing coefficients.",
+      "implemented": false
+    },
+    {
+      "key": "optim.epsilon",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 1e-08,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; Adam/AdamW only",
+      "effect": "Optimizer numerical stability constant.",
+      "implemented": false
+    },
+    {
+      "key": "optim.momentum",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 0.9,
+      "status": "proposed_default",
+      "choices_or_constraints": "[0,1); SGD only",
+      "effect": "Accumulates gradient direction across updates.",
+      "implemented": false
+    },
+    {
+      "key": "optim.nesterov",
+      "category": "Optimization and stopping",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "only with compatible SGD momentum settings",
+      "effect": "Alternative momentum update.",
+      "implemented": false
+    },
+    {
+      "key": "optim.gradient_clip_norm",
+      "category": "Optimization and stopping",
+      "type": "optional_float",
+      "default": null,
+      "status": "proposed_default",
+      "choices_or_constraints": "null or positive",
+      "effect": "Caps gradient norm; applies after unscaling mixed-precision gradients.",
+      "implemented": false
+    },
+    {
+      "key": "optim.scheduler",
+      "category": "Optimization and stopping",
+      "type": "enum",
+      "default": "none",
+      "status": "proposed_default",
+      "choices_or_constraints": "none; step; cosine; reduce_on_plateau",
+      "effect": "Changes learning rate over training; needs a defined stepping unit.",
+      "implemented": false
+    },
+    {
+      "key": "optim.scheduler_step_epochs",
+      "category": "Optimization and stopping",
+      "type": "integer",
+      "default": 5,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; step scheduler only",
+      "effect": "Epoch interval between scheduled reductions.",
+      "implemented": false
+    },
+    {
+      "key": "optim.scheduler_factor",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 0.5,
+      "status": "proposed_default",
+      "choices_or_constraints": "0 < factor < 1; step/plateau only",
+      "effect": "Multiplier for learning-rate reductions.",
+      "implemented": false
+    },
+    {
+      "key": "optim.scheduler_patience",
+      "category": "Optimization and stopping",
+      "type": "integer",
+      "default": 3,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative; plateau only",
+      "effect": "Validation checks without improvement before reducing the learning rate.",
+      "implemented": false
+    },
+    {
+      "key": "optim.min_learning_rate",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 1e-06,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative; scheduler dependent",
+      "effect": "Learning-rate lower bound.",
+      "implemented": false
+    },
+    {
+      "key": "optim.warmup_steps",
+      "category": "Optimization and stopping",
+      "type": "integer",
+      "default": 0,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative",
+      "effect": "Gradually increases learning rate initially; optional.",
+      "implemented": false
+    },
+    {
+      "key": "train.epochs",
+      "category": "Optimization and stopping",
+      "type": "integer",
+      "default": 10,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive",
+      "effect": "Maximum passes over the selected training set; provisional run budget.",
+      "implemented": false
+    },
+    {
+      "key": "train.max_steps",
+      "category": "Optimization and stopping",
+      "type": "optional_integer",
+      "default": null,
+      "status": "proposed_default",
+      "choices_or_constraints": "null or positive",
+      "effect": "Optional update cap; stop at whichever epoch/step limit comes first.",
+      "implemented": false
+    },
+    {
+      "key": "train.accumulation_steps",
+      "category": "Optimization and stopping",
+      "type": "integer",
+      "default": 1,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive",
+      "effect": "Microbatches per optimizer update; effective batch is batch_size \u00d7 accumulation_steps on one device.",
+      "implemented": false
+    },
+    {
+      "key": "train.early_stopping",
+      "category": "Optimization and stopping",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false",
+      "effect": "Stops using validation performance, never test performance.",
+      "implemented": false
+    },
+    {
+      "key": "train.early_stopping_patience",
+      "category": "Optimization and stopping",
+      "type": "integer",
+      "default": 5,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive; early stopping only",
+      "effect": "Validation checks without sufficient improvement before stopping.",
+      "implemented": false
+    },
+    {
+      "key": "train.early_stopping_min_delta",
+      "category": "Optimization and stopping",
+      "type": "float",
+      "default": 0.0,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative; early stopping only",
+      "effect": "Minimum validation improvement counted as progress.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.device",
+      "category": "Execution and reproducibility",
+      "type": "enum",
+      "default": "auto",
+      "status": "proposed_default",
+      "choices_or_constraints": "auto; cpu; cuda; mps",
+      "effect": "Available hardware selection; never starts a paid VM by itself.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.precision",
+      "category": "Execution and reproducibility",
+      "type": "enum",
+      "default": "fp32",
+      "status": "proposed_default",
+      "choices_or_constraints": "fp32; bf16_amp; fp16_amp",
+      "effect": "Numeric compute precision; hardware support and stability differ.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.seed",
+      "category": "Execution and reproducibility",
+      "type": "integer",
+      "default": 42,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative",
+      "effect": "Controls initialization/sampling randomness; seed alone does not guarantee exact reproducibility.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.deterministic",
+      "category": "Execution and reproducibility",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false",
+      "effect": "Requests deterministic operations; may slow training or reject unsupported operations.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.compile",
+      "category": "Execution and reproducibility",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false; backend dependent",
+      "effect": "Optional execution optimization with compilation overhead.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.max_minutes",
+      "category": "Execution and reproducibility",
+      "type": "optional_float",
+      "default": null,
+      "status": "proposed_default",
+      "choices_or_constraints": "null or positive; mandatory for budgeted cloud runs",
+      "effect": "Training time cap; stopping a process does not necessarily stop provider billing.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.max_cost_usd",
+      "category": "Execution and reproducibility",
+      "type": "optional_float",
+      "default": null,
+      "status": "proposed_default",
+      "choices_or_constraints": "null or nonnegative; explicit user authorization required",
+      "effect": "External spending cap; must be enforced by orchestration, not only the training loop.",
+      "implemented": false
+    },
+    {
+      "key": "runtime.stop_pod_on_finish",
+      "category": "Execution and reproducibility",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "provider-specific; requires authorized lifecycle control",
+      "effect": "Cloud lifecycle policy; preserve persistent storage and confirm stopped state.",
+      "implemented": false
+    },
+    {
+      "key": "eval.every_epochs",
+      "category": "Evaluation, logging and inference",
+      "type": "integer",
+      "default": 1,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive",
+      "effect": "Validation frequency; determines scheduler/early-stopping observation frequency.",
+      "implemented": false
+    },
+    {
+      "key": "eval.metrics",
+      "category": "Evaluation, logging and inference",
+      "type": "string[]",
+      "default": [
+        "mae",
+        "mse"
+      ],
+      "status": "proposed_default",
+      "choices_or_constraints": "mae; mse; psnr; later: ssim, edge/preservation metrics",
+      "effect": "Report explicit range, aggregation, clipping and definitions; metrics do not prove plausible canonical colors.",
+      "implemented": false
+    },
+    {
+      "key": "eval.track",
+      "category": "Evaluation, logging and inference",
+      "type": "enum",
+      "default": "desaturated",
+      "status": "proposed_default",
+      "choices_or_constraints": "desaturated; original_bw",
+      "effect": "Report the approved two evaluation tracks separately; original-input collection status is independently tracked.",
+      "implemented": false
+    },
+    {
+      "key": "eval.spatial_policy",
+      "category": "Evaluation, logging and inference",
+      "type": "enum",
+      "default": "full_image",
+      "status": "proposed_default",
+      "choices_or_constraints": "full_image; fixed_tiles",
+      "effect": "Keep evaluation geometry consistent across compared models.",
+      "implemented": false
+    },
+    {
+      "key": "eval.clip_predictions",
+      "category": "Evaluation, logging and inference",
+      "type": "boolean",
+      "default": false,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false",
+      "effect": "Whether metrics use raw or clipped predictions; state this explicitly. Display clipping is separate.",
+      "implemented": false
+    },
+    {
+      "key": "eval.checkpoint_metric",
+      "category": "Evaluation, logging and inference",
+      "type": "enum",
+      "default": "validation_mae",
+      "status": "proposed_default",
+      "choices_or_constraints": "validation_mae; validation_mse; validation_loss",
+      "effect": "Select the best checkpoint using validation only; minimize these errors.",
+      "implemented": false
+    },
+    {
+      "key": "logging.every_steps",
+      "category": "Evaluation, logging and inference",
+      "type": "integer",
+      "default": 20,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive",
+      "effect": "Log frequency; affects overhead, not model architecture.",
+      "implemented": false
+    },
+    {
+      "key": "logging.preview_count",
+      "category": "Evaluation, logging and inference",
+      "type": "integer",
+      "default": 6,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative",
+      "effect": "Number of fixed validation examples shown per check; never use test previews as a tuning dashboard.",
+      "implemented": false
+    },
+    {
+      "key": "logging.save_every_epochs",
+      "category": "Evaluation, logging and inference",
+      "type": "integer",
+      "default": 1,
+      "status": "proposed_default",
+      "choices_or_constraints": "positive",
+      "effect": "Checkpoint interval; save model, optimizer, scheduler, scaler, RNG and step/epoch state for full resumption.",
+      "implemented": false
+    },
+    {
+      "key": "logging.run_name",
+      "category": "Evaluation, logging and inference",
+      "type": "string",
+      "default": "tiny-cnn-baseline",
+      "status": "proposed_default",
+      "choices_or_constraints": "unique human-readable label",
+      "effect": "Identifies immutable experiment settings and result paths.",
+      "implemented": false
+    },
+    {
+      "key": "logging.resume_from",
+      "category": "Evaluation, logging and inference",
+      "type": "optional_path",
+      "default": null,
+      "status": "proposed_default",
+      "choices_or_constraints": "null or a compatible checkpoint path",
+      "effect": "Resume exact training state; distinguish from loading weights for a new experiment.",
+      "implemented": false
+    },
+    {
+      "key": "inference.tile_hw",
+      "category": "Evaluation, logging and inference",
+      "type": "optional_integer[2]",
+      "default": null,
+      "status": "proposed_default",
+      "choices_or_constraints": "null or positive dimensions",
+      "effect": "Optional tiled inference for memory; needs sufficient halo and an explicit stitching policy.",
+      "implemented": false
+    },
+    {
+      "key": "inference.tile_halo",
+      "category": "Evaluation, logging and inference",
+      "type": "integer",
+      "default": 3,
+      "status": "proposed_default",
+      "choices_or_constraints": "nonnegative; architecture dependent",
+      "effect": "For the baseline, 3-pixel context radius covers the 7\u00d77 receptive field; recompute after architecture changes.",
+      "implemented": false
+    },
+    {
+      "key": "inference.display_clip",
+      "category": "Evaluation, logging and inference",
+      "type": "boolean",
+      "default": true,
+      "status": "proposed_default",
+      "choices_or_constraints": "true; false",
+      "effect": "Clip final display RGB to valid range; does not change training targets or loss.",
+      "implemented": false
+    },
+    {
+      "key": "inference.preserve_mask",
+      "category": "Evaluation, logging and inference",
+      "type": "boolean",
+      "default": false,
+      "status": "future_extension",
+      "choices_or_constraints": "false; later true with a validated mask source",
+      "effect": "Optional compositing; preserve-region definitions must not conflict with intentionally colored lettering.",
+      "implemented": false
+    },
+    {
+      "key": "future.skip_connections",
+      "category": "Later architecture experiments",
+      "type": "enum",
+      "default": null,
+      "status": "future_extension",
+      "choices_or_constraints": "none; residual; unet",
+      "effect": "Different graph connections; requires implementation and shape validation.",
+      "implemented": false
+    },
+    {
+      "key": "future.downsampling",
+      "category": "Later architecture experiments",
+      "type": "enum",
+      "default": null,
+      "status": "future_extension",
+      "choices_or_constraints": "none; pooling; strided_conv",
+      "effect": "Reduces feature resolution and broadens context; requires matching decoder.",
+      "implemented": false
+    },
+    {
+      "key": "future.upsampling",
+      "category": "Later architecture experiments",
+      "type": "enum",
+      "default": null,
+      "status": "future_extension",
+      "choices_or_constraints": "interpolation_conv; transposed_conv",
+      "effect": "Decoder reconstruction choice; output dimensions must match targets.",
+      "implemented": false
+    },
+    {
+      "key": "future.backbone",
+      "category": "Later architecture experiments",
+      "type": "optional_string",
+      "default": null,
+      "status": "future_extension",
+      "choices_or_constraints": "specific pretrained encoder name/version",
+      "effect": "Record weight provenance, input adaptation and preprocessing; tags alone do not provide pretrained semantics.",
+      "implemented": false
+    },
+    {
+      "key": "future.freeze_encoder",
+      "category": "Later architecture experiments",
+      "type": "optional_boolean",
+      "default": null,
+      "status": "future_extension",
+      "choices_or_constraints": "true; false; pretrained model only",
+      "effect": "Controls which weights receive updates; unfreezing may need a different learning rate.",
+      "implemented": false
+    },
+    {
+      "key": "future.encoder_learning_rate",
+      "category": "Later architecture experiments",
+      "type": "optional_float",
+      "default": null,
+      "status": "future_extension",
+      "choices_or_constraints": "null or positive; pretrained encoder only",
+      "effect": "Allows slower fine-tuning of pretrained weights.",
+      "implemented": false
+    }
+  ]
+}

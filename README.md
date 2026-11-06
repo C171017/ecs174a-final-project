@@ -5,6 +5,7 @@ Shared workspace for the group final project and course recording library.
 - **Website:** https://C171017.github.io/ecs174a-final-project/
 - **Repository:** https://github.com/C171017/ecs174a-final-project
 - **Project planning:** [docs/PROJECT.md](docs/PROJECT.md)
+- **Manga training settings:** [100-setting catalog](docs/manga/Manga%20colorization%20-%20settings%20catalog.md) · [JSON companion](docs/manga/manga-settings-catalog.json)
 
 The website is public and supports audio playback, transcript previews, full-text search, and downloads. It has no framework, paid service, or external analytics.
 
